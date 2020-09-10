@@ -13,15 +13,18 @@ import {
 } from '@ant-design/icons'
 interface ItemProps {
   title: String,
+  url?: String,
   icon: any
 }
 export const SiderItems: Array<ItemProps> = [
   {
     title: '首页',
+    url:'/',
     icon: <HomeOutlined />
   },
   {
     title: '文章管理',
+    url:'/article-list',
     icon: <EditOutlined />
   },
   {

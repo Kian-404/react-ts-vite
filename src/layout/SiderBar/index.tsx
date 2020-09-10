@@ -7,11 +7,12 @@ const { Sider } = Layout;
 interface props {
   collapsed: boolean
 }
+const defaultSelectedKeys = ['1'];
 const MySider = ({ collapsed }: props) => {
   return (
     <Sider className="siderbar" trigger={null} collapsible collapsed={collapsed}>
       <div className="logo" >Hello </div>
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+      <Menu theme="dark" mode="inline" defaultSelectedKeys={defaultSelectedKeys}>
         {SiderItems.map((item, index) => {
           return (
             <Menu.Item key={index} icon={item.icon}>
