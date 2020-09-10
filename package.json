@@ -1,0 +1,30 @@
+{
+  "name": "react-ts-vite",
+  "version": "0.0.0",
+  "author": "kian",
+  "main": "main.js",
+  "homepage": "./",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "electron-start": "electron ."
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.2.2",
+    "@pika/react": "^16.13.1",
+    "@pika/react-dom": "^16.13.1",
+    "antd": "^4.6.3",
+    "axios": "^0.20.0",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5"
+  },
+  "devDependencies": {
+    "@types/mockjs": "^1.0.3",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "typescript": "^3.9.3",
+    "vite": "^1.0.0-rc.1",
+    "vite-plugin-react": "^3.0.0"
+  }
+}

@@ -1,0 +1,12 @@
+.siderbar{
+  height: 100vh;
+  overflow: hidden;
+}
+.logo{
+  color: #ffffff;
+  text-align: center;
+}
+.ant-menu{
+  height: 100%;
+  /* overflow: scroll; */
+}
