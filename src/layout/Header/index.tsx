@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ElementType } from 'react';
 import { connect } from 'react-redux'
 import { toggleCollapsed } from '../../redux/actions/index'
 import { Layout } from 'antd';
@@ -13,7 +13,7 @@ interface props {
   collapsed: Boolean,
   setCollapesd: Function
 }
-const MyHeader = ({ collapsed, setCollapesd }: props) => {
+const MyHeader:ElementType = ({ collapsed, setCollapesd }: props) => {
   return (
     <Header className="site-layout-background" style={{ padding: 0 }}>
       {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
