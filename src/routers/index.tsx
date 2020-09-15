@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from '../views/Home'
 import About from '../views/About'
 
-const Router = () => {
+const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={Home}></Route>
@@ -13,4 +13,4 @@ const Router = () => {
   )
 }
 
-export default Router
+export default Routes
