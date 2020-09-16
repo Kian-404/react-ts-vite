@@ -29,32 +29,32 @@ export const SiderItems: Array<ItemProps> = [
   },
   {
     title: '页面管理',
-    url:'/article-list',
+    url:'/page-list',
     icon: <ProfileOutlined />
   },
   {
     title: '评论管理',
-    url:'/article-list',
+    url:'/comment-list',
     icon: <MessageOutlined />
   },
   {
     title: '文件管理',
-    url:'/article-list',
+    url:'/file-list',
     icon: <FileMarkdownOutlined />
   },
   {
     title: '搜索记录',
-    url:'/article-list',
+    url:'/search-list',
     icon: <FileSearchOutlined />
   },
   {
     title: '访问统计',
-    url:'/article-list',
+    url:'/history-list',
     icon: <LineChartOutlined />
   },
   {
     title: '邮件管理',
-    url:'/article-list',
+    url:'/email-list',
     icon: <MailOutlined />
   },
   {
