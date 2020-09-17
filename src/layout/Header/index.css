@@ -1,3 +1,16 @@
+.header{
+  display: flex;
+}
+.header .header-content{
+  flex: 1;
+  text-align: right;
+  margin-right: 50px;
+  display: flex;
+  flex-flow: row-reverse;
+}
+.header .header-content .option-item{
+  margin: 0 20px;
+}
 .trigger{
   margin: 0 20px;
 }
