@@ -4,6 +4,7 @@
   "author": "kian",
   "main": "main.js",
   "homepage": "./",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -26,6 +27,7 @@
     "@types/mockjs": "^1.0.3",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
+    "@types/react-redux": "^7.1.9",
     "typescript": "^3.9.3",
     "vite": "^1.0.0-rc.1",
     "vite-plugin-react": "^3.0.0"
