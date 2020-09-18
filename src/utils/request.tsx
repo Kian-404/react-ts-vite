@@ -53,6 +53,7 @@ service.interceptors.request.use((config: any) => {
 /* respone拦截器 */
 service.interceptors.response.use(
   (response: any) => {
+    debugger;
     // 移除队列中的该请求，注意这时候没有传第二个参数f
     removePending(response.config);
     // 获取返回数据，并处理。按自己业务需求修改。下面只是个demo
