@@ -14,6 +14,16 @@ const config: UserConfig = {
   },
   optimizeDeps: {
     include: ['echarts',]
+  },
+  proxy: {
+    // string shorthand
+    '/foo': 'http://localhost:4567/foo',
+    // with options
+    '/hello': {
+      target: 'https://apinew.juejin.im/user_api/v1/user/get?aid=2608&not_self=0',
+      changeOrigin: true,
+      rewrite: path => path.replace(/^\/hello/, '')
+    }
   }
 }
 
