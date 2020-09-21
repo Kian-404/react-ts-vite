@@ -34,6 +34,11 @@ const mapStateToProps = (state: any) => {
     collapsed: state.Collapsed.collapsed
   }
 }
-const MSider = connect(mapStateToProps)(MySider);
+const ComponentSider = connect(mapStateToProps)(MySider)
+const MSider = () => {
+  return (
+    <ComponentSider />
+  )
+};
 
 export default MSider;

@@ -7,8 +7,6 @@ import MHeader from './Header'
 import MContent from './Content'
 const MLayout: FC = () => {
 
-  const [collapsed, setCollapesd] = useState(false)
-
   return (
     <Layout>
       <MSider />
@@ -19,5 +17,4 @@ const MLayout: FC = () => {
     </Layout>
   );
 }
-
 export default MLayout

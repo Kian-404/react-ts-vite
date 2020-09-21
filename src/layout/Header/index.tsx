@@ -1,7 +1,7 @@
 import React, { ElementType } from 'react';
 import { connect } from 'react-redux'
 import { toggleCollapsed } from '../../redux/actions/index'
-import { Layout, Badge, Menu, Dropdown, Avatar } from 'antd';
+import { Layout, Badge, Menu, Dropdown, Avatar, List } from 'antd';
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -29,6 +29,24 @@ const menu = (
     </Menu.Item>
   </Menu>
 );
+const data = [
+  'Racing car sprays burning fuel into crowd.',
+  'Japanese princess to wed commoner.',
+  'Australian walks 100km after outback crash.',
+  'Man charged over missing wedding girl.',
+  'Los Angeles battles huge wildfires.',
+];
+const Message = (
+  <List
+    bordered
+    dataSource={data}
+    renderItem={(item: any) => (
+      <List.Item>
+        {item}
+      </List.Item>
+    )}
+  />
+)
 const MyHeader: ElementType = ({ collapsed, setCollapesd }: props) => {
   return (
     <Header className="site-layout-background header" style={{ padding: 0 }}>
@@ -48,7 +66,9 @@ const MyHeader: ElementType = ({ collapsed, setCollapesd }: props) => {
           </Dropdown>
         </div>
         <div className="option-item">
-          <Badge count={5}><BellOutlined /></Badge>
+          <Dropdown overlay={Message} placement="bottomCenter" arrow>
+            <Badge count={5}><BellOutlined /></Badge>
+          </Dropdown>
         </div>
       </div>
     </Header>
@@ -69,6 +89,13 @@ const mapDispatchToProps = (dispatch: any) => {
   }
 }
 
+const ComponentHeader = connect(mapStateToProps, mapDispatchToProps)(MyHeader)
 
-const MHeader = connect(mapStateToProps, mapDispatchToProps)(MyHeader)
+const MHeader = () => {
+  return (
+    <ComponentHeader/>
+  )
+}
+console.log(MHeader);
+debugger;
 export default MHeader;
