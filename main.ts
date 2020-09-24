@@ -3,7 +3,7 @@
  * @Company: Venus
  * @Date: 2020-09-08 17:11:46
  * @LastEditors: Tian jianen
- * @LastEditTime: 2020-09-24 10:08:56
+ * @LastEditTime: 2020-09-24 10:18:15
  */
 // 引入electron并创建一个Browserwindow
 const {app, BrowserWindow} = require('electron')
@@ -11,7 +11,7 @@ const path = require('path')
 const url = require('url')
 const pkg = require('./package.json') // 引用package.json 
 // 保持window对象的全局引用,避免JavaScript对象被垃圾回收时,窗口被自动关闭.
-let mainWindow:any;
+let mainWindow;
 
 function createWindow () {
 //创建浏览器窗口,宽高自定义具体大小你开心就好
