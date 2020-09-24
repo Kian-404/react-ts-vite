@@ -30,6 +30,6 @@
   },
   "include": [
     "src",
-    "main.js"
+    "main.ts"
   ]
 }
