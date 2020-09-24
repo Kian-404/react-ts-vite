@@ -1,7 +1,9 @@
 import React from 'react'
 import {
   HomeOutlined,
+  DashboardOutlined,
   EditOutlined,
+  OrderedListOutlined,
   ProfileOutlined,
   MessageOutlined,
   FileMarkdownOutlined,
@@ -13,19 +15,33 @@ import {
 } from '@ant-design/icons'
 interface ItemProps {
   title: String,
+  icon: any,
+  children?:Array<ItemProps> ,
   url?: String,
-  icon: any
+
 }
 export const SiderItems: Array<ItemProps> = [
   {
     title: '首页',
     url:'/',
-    icon: <HomeOutlined />
+    icon: <DashboardOutlined />
   },
   {
     title: '文章管理',
     url:'/article-list',
-    icon: <EditOutlined />
+    icon: <EditOutlined />,
+    children:[
+      {
+        title: '文章列表',
+        url:'/article-list',
+        icon: <OrderedListOutlined />,
+      },
+      {
+        title: '新建文章',
+        url:'/article-new',
+        icon: <EditOutlined />,
+      }
+    ]
   },
   {
     title: '页面管理',

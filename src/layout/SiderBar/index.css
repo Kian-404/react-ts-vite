@@ -8,7 +8,7 @@
   color: #ffffff;
   text-align: center;
 }
-.ant-menu{
+.sidebar-menu{
   height: calc(100vh - 40px);
   overflow: scroll;
   overflow-x: hidden;
