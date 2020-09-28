@@ -1,0 +1,15 @@
+.login-page{
+  margin: 0 auto;
+  height: 100%;
+  width: 500px;
+  position: relative;
+}
+.login{
+  text-align: center;
+  width: 300px;
+  /* margin: 0 auto; */
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

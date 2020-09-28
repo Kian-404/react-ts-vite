@@ -1,10 +1,3 @@
-/*
- * @Version: 
- * @Company: Venus
- * @Date: 2020-09-08 17:11:46
- * @LastEditors: Tian jianen
- * @LastEditTime: 2020-09-24 10:18:15
- */
 // 引入electron并创建一个Browserwindow
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
