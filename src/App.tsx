@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import './App.css'
-import MLayout from './layout/index'
-
+import { AppRoutes } from './routers'
 function App() {
 
   return (
-    <div className="App">
-      <MLayout/>
-    </div>
+    <>
+      <AppRoutes />
+    </>
   )
 }
 

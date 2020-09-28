@@ -28,39 +28,39 @@ export const SiderItems: Array<ItemProps> = [
   },
   {
     title: '文章管理',
-    url:'/article-list',
+    url:'/main/article-list',
     icon: <EditOutlined />,
     children:[
       {
         title: '文章列表',
-        url:'/article-list',
+        url:'/main/article-list',
         icon: <OrderedListOutlined />,
       },
       {
         title: '新建文章',
-        url:'/article-new',
+        url:'/main/article-new',
         icon: <EditOutlined />,
       }
     ]
   },
   {
     title: '页面管理',
-    url:'/page-list',
+    url:'/main/page-list',
     icon: <ProfileOutlined />
   },
   {
     title: '评论管理',
-    url:'/comment-list',
+    url:'/main/main/comment-list',
     icon: <MessageOutlined />
   },
   {
     title: '文件管理',
-    url:'/file-list',
+    url:'/main/file-list',
     icon: <FileMarkdownOutlined />
   },
   {
     title: '搜索记录',
-    url:'/search-list',
+    url:'/main/search-list',
     icon: <FileSearchOutlined />
   },
   {
@@ -75,12 +75,12 @@ export const SiderItems: Array<ItemProps> = [
   },
   {
     title: '系统设置',
-    url:'/system-setting',
+    url:'/main/system-setting',
     icon: <SettingOutlined />
   },
   {
     title: '个人中心',
-    url:'/about',
+    url:'/main/about',
     icon: <UserOutlined />
   },
 ]
