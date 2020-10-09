@@ -1,13 +1,11 @@
-import React, { ElementType } from 'react';
-import { connect } from 'react-redux'
+import React, {FC } from 'react';
 import { Link } from 'react-router-dom'
 import { Layout, Menu } from 'antd';
 import { SiderItems } from './sideconfig';
+import { collapsed} from '../../redux/models'
 import './index.css'
 const { Sider } = Layout;
-interface props {
-  collapsed: boolean
-}
+
 const {SubMenu, Item} = Menu
 // 递归侧边栏
 const SideMenu = (menus: any) => {
@@ -32,39 +30,17 @@ const SideMenu = (menus: any) => {
   })
 }
 
-
 const defaultSelectedKeys = ['1'];
-const MySider: ElementType = ({ collapsed }: props) => {
+const MSider: FC = () => {
+  const collapsedflag = collapsed.useData();
   return (
-    <Sider className="siderbar" trigger={null} collapsible collapsed={collapsed}>
+    <Sider className="siderbar" trigger={null} collapsible collapsed={collapsedflag.collapsed}>
       <div className="logo" >Hello </div>
       <Menu className='sidebar-menu' theme="dark" mode="inline" defaultSelectedKeys={defaultSelectedKeys}>
         {SideMenu(SiderItems)}
-        {/* {SiderItems.map((item, index) => {
-          return (
-            <Menu.Item key={index} icon={item.icon}>
-              <Link to={item.url}>
-                {item.title}
-              </Link>
-            </Menu.Item>
-          )
-        })
-        } */}
       </Menu>
     </Sider>
   )
 }
-
-const mapStateToProps = (state: any) => {
-  return {
-    collapsed: state.Collapsed.collapsed
-  }
-}
-const ComponentSider = connect(mapStateToProps)(MySider)
-const MSider = () => {
-  return (
-    <ComponentSider />
-  )
-};
 
 export default MSider;

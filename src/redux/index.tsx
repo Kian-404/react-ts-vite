@@ -1,7 +1,24 @@
 import React from 'react';
-import { createStore } from 'redux';
-import AppReducers from './reducers/index'
+import { collapsed } from './models'
+import { createReduxStore } from "@redux-model/react";
 
- const store = createStore(AppReducers)
-
+const store = createReduxStore({
+  persist: {
+    version: 0,
+    key: "redux-persist",
+    storage: "local",
+    allowlist: {
+      collapsed
+    }
+  },
+  middleware: [
+    // Logger will slows down the program
+    // Don't use it in production
+    // createLogger({
+    //   collapsed: true,
+    //   diff: true,
+    //   duration: true
+    // })
+  ]
+});
  export default store

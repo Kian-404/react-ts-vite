@@ -1,7 +1,6 @@
-import React, { ElementType } from 'react';
-import { connect } from 'react-redux'
-import { toggleCollapsed } from '../../redux/actions/index'
+import React, { FC } from 'react';
 import { Layout, Badge, Menu, Dropdown, Avatar, List } from 'antd';
+import { collapsed} from '../../redux/models'
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -47,13 +46,15 @@ const Message = (
     )}
   />
 )
-const MyHeader: ElementType = ({ collapsed, setCollapesd }: props) => {
+const MHeader: FC = () => {
+  const collapsedflag = collapsed.useData();
+  console.log(collapsedflag);
   return (
     <Header className="site-layout-background header" style={{ padding: 0 }}>
       <div className="toggle-menu">
         {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
           className: 'trigger',
-          onClick: () => setCollapesd(!collapsed),
+          onClick: () =>collapsed.setCollapesd(!collapsedflag.collapsed),
         })}
       </div>
       <div className="header-content">
@@ -75,27 +76,4 @@ const MyHeader: ElementType = ({ collapsed, setCollapesd }: props) => {
   )
 }
 
-const mapStateToProps = (state: any) => {
-  return {
-    collapsed: state.Collapsed.collapsed
-  }
-}
-
-const mapDispatchToProps = (dispatch: any) => {
-  return {
-    setCollapesd: (collapsed: Boolean) => {
-      dispatch(toggleCollapsed(collapsed))
-    }
-  }
-}
-
-const ComponentHeader = connect(mapStateToProps, mapDispatchToProps)(MyHeader)
-
-const MHeader = () => {
-  return (
-    <ComponentHeader/>
-  )
-}
-console.log(MHeader);
-debugger;
 export default MHeader;

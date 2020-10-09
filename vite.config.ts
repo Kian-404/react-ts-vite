@@ -13,7 +13,7 @@ const config: UserConfig = {
     '/@utils/': path.resolve(__dirname, './src/utils'),
   },
   optimizeDeps: {
-    include: ['echarts',]
+    include: ['echarts', '@redux-model/react']
   },
   proxy: {
     // string shorthand
