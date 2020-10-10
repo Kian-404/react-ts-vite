@@ -2,7 +2,7 @@ import request from '../utils/request';
 import '../mocks/index'
 export const getMockData = (params: any) =>
   request({
-    url: '/hello',
+    url: '/mock',
     method: 'get',
     params
   })

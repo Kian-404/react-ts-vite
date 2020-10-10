@@ -1,7 +1,5 @@
 // const Mock = require('mockjs')
 import Mock from 'mockjs'
-console.log(Mock);
-debugger;
 const MockData = Mock.mock("/mock",'get', {
   code: 200,
   "userinfo|4":[{   			//生成四个如下格式的数据
