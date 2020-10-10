@@ -1,12 +1,12 @@
-import React, {FC } from 'react';
+import React, { FC } from 'react';
 import { Link } from 'react-router-dom'
 import { Layout, Menu } from 'antd';
 import { SiderItems } from './sideconfig';
-import { collapsed, sidebartheme} from '../../redux/models'
+import { collapsed, sidebartheme } from '../../redux/models'
 import './index.css'
 const { Sider } = Layout;
 
-const {SubMenu, Item} = Menu
+const { SubMenu, Item } = Menu
 // 递归侧边栏
 const SideMenu = (menus: any) => {
   return menus.map((item: { children: any; title: any; icon: any; url: any; }) => {
@@ -35,8 +35,8 @@ const MSider: FC = () => {
   const collapsedflag = collapsed.useData();
   const sidebarTheme = sidebartheme.useData();
   return (
-    <Sider className="siderbar" trigger={null} collapsible collapsed={collapsedflag.collapsed}>
-      <div className="logo" >Hello </div>
+    <Sider className="siderbar" trigger={null} theme={sidebarTheme.theme} collapsible collapsed={collapsedflag.collapsed}>
+      <div className={`logo ${sidebarTheme.theme === 'dark' ? '' : 'light'}`}  >Hello </div>
       <Menu className='sidebar-menu' theme={sidebarTheme.theme} mode="inline" defaultSelectedKeys={defaultSelectedKeys}>
         {SideMenu(SiderItems)}
       </Menu>

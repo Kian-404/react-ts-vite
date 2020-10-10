@@ -8,6 +8,10 @@
   color: #ffffff;
   text-align: center;
 }
+.siderbar .logo.light{
+  background: #ffffff;
+  color: #000000;
+}
 .sidebar-menu{
   height: calc(100vh - 40px);
   overflow: scroll;
