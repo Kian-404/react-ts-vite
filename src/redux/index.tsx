@@ -1,5 +1,5 @@
 import React from 'react';
-import { collapsed } from './models'
+import { collapsed, sidebartheme } from './models'
 import { createReduxStore } from "@redux-model/react";
 
 const store = createReduxStore({
@@ -8,7 +8,8 @@ const store = createReduxStore({
     key: "redux-persist",
     storage: "local",
     allowlist: {
-      collapsed
+      collapsed,
+      sidebartheme
     }
   },
   middleware: [

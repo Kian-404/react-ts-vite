@@ -2,7 +2,7 @@ import React, {FC } from 'react';
 import { Link } from 'react-router-dom'
 import { Layout, Menu } from 'antd';
 import { SiderItems } from './sideconfig';
-import { collapsed} from '../../redux/models'
+import { collapsed, sidebartheme} from '../../redux/models'
 import './index.css'
 const { Sider } = Layout;
 
@@ -33,10 +33,11 @@ const SideMenu = (menus: any) => {
 const defaultSelectedKeys = ['1'];
 const MSider: FC = () => {
   const collapsedflag = collapsed.useData();
+  const sidebarTheme = sidebartheme.useData();
   return (
     <Sider className="siderbar" trigger={null} collapsible collapsed={collapsedflag.collapsed}>
       <div className="logo" >Hello </div>
-      <Menu className='sidebar-menu' theme="dark" mode="inline" defaultSelectedKeys={defaultSelectedKeys}>
+      <Menu className='sidebar-menu' theme={sidebarTheme.theme} mode="inline" defaultSelectedKeys={defaultSelectedKeys}>
         {SideMenu(SiderItems)}
       </Menu>
     </Sider>

@@ -14,6 +14,9 @@
   overflow-x: hidden;
   overflow-y: scroll;
 }
+.sidebar-menu .ant-menu-item .anticon{
+  font-size: 20px;
+}
 
 /*css主要部分的样式*/
 /*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
