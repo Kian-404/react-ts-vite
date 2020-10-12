@@ -2,7 +2,7 @@
   "name": "react-ts-vite",
   "version": "0.0.0",
   "author": "kian",
-  "main": "main.ts",
+  "main": "main.js",
   "homepage": "./",
   "license": "MIT",
   "scripts": {
