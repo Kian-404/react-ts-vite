@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { Layout, Badge, Menu, Dropdown, Avatar, List, Drawer, Radio } from 'antd';
+import { Layout, Badge, Menu, Dropdown, Tooltip, List, Drawer, Radio, Switch } from 'antd';
 import { collapsed, sidebartheme } from '../../redux/models'
 import {
   MenuUnfoldOutlined,
@@ -8,7 +8,8 @@ import {
   DownOutlined,
   LogoutOutlined,
   UserOutlined,
-  LayoutOutlined
+  LayoutOutlined,
+  GithubOutlined
 } from '@ant-design/icons';
 import './index.css'
 const { Header, } = Layout;
@@ -55,7 +56,7 @@ const MHeader: FC = () => {
   const DrawerPlacement = "right";
   const [visible, setVisible] = useState(false);
   const options = [
-    { label: '白色', value: 'light' },
+    { label: '亮色', value: 'light' },
     { label: '暗色', value: 'dark' },
   ];
   const showDrawer = () => {
@@ -64,17 +65,23 @@ const MHeader: FC = () => {
   const onClose = () => {
     setVisible(false);
   };
-  const onChange = (e: { target: { value: string | undefined; }; }) => {
+  const ChangeTheme = (e: { target: { value: string | undefined; }; }) => {
     sidebartheme.setTheme(e.target.value)
     console.log('radio4 checked', e.target.value);
 
   };
+  const changeHeader = (checked:boolean) => {
+    console.log(`switch to ${checked}`);
+  }
+  const githubLink = () => {
+    window.open('https://github.com/Kian-404/react-ts-vite')
+  }
   return (
     <>
       <Header className="site-layout-background header" style={{ padding: 0 }}>
         <div className="toggle-menu">
           {React.createElement(collapsedflag.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-            className: 'trigger',
+            className: 'trigger icon-item',
             onClick: () => collapsed.setCollapesd(!collapsedflag.collapsed),
           })}
         </div>
@@ -83,17 +90,24 @@ const MHeader: FC = () => {
           <div className="option-item">
             <Dropdown overlay={menu} placement="bottomCenter" arrow>
               <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                <Avatar style={{ backgroundColor: '#ffbf00' }}>Kian</Avatar> <DownOutlined />
+                Kian <DownOutlined />
               </a>
             </Dropdown>
           </div>
           <div className="option-item">
             <Dropdown overlay={Message} placement="bottomCenter" arrow>
-              <Badge count={5}><BellOutlined /></Badge>
+              <Badge className="icon-item" count={5}><BellOutlined /></Badge>
             </Dropdown>
           </div>
           <div className="option-item">
-            <LayoutOutlined onClick={showDrawer} />
+            <Tooltip placement="bottom" title="布局样式">
+              <LayoutOutlined className="icon-item" onClick={showDrawer} />
+            </Tooltip>
+          </div>
+          <div className="option-item">
+            <Tooltip placement="bottom" title="Github">
+              <GithubOutlined className="icon-item" onClick={githubLink} />
+            </Tooltip>
           </div>
         </div>
       </Header>
@@ -110,16 +124,31 @@ const MHeader: FC = () => {
           <div className="option">
             <Radio.Group
               options={options}
-              onChange={onChange}
+              onChange={ChangeTheme}
               value={sidebarTheme.theme}
               optionType="button"
               buttonStyle="solid"
             />
           </div>
         </div>
-
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <div className="setting-item">
+          <div className="text">固定header</div>
+          <div className="option">
+            <Switch defaultChecked onChange={changeHeader} />
+          </div>
+        </div>
+        <div className="setting-item">
+          <div className="text">固定侧边菜单</div>
+          <div className="option">
+            <Switch defaultChecked onChange={changeHeader} />
+          </div>
+        </div>
+        <div className="setting-item">
+          <div className="text">开启多Tab</div>
+          <div className="option">
+            <Switch defaultChecked onChange={changeHeader} />
+          </div>
+        </div>
       </Drawer>
     </>
   )

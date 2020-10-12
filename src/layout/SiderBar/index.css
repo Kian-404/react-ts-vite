@@ -18,7 +18,7 @@
   overflow-x: hidden;
   overflow-y: scroll;
 }
-.sidebar-menu .ant-menu-item .anticon{
+.sidebar-menu  .anticon{
   font-size: 20px;
 }
 

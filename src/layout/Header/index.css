@@ -15,7 +15,7 @@
 .header .header-content .option-item{
   margin: 0 20px;
 }
-.header .header-content .option-item .anticon {
+.header .header-content .option-item .icon-item {
   font-size: 20px;
 }
 .trigger{
@@ -24,6 +24,7 @@
 .drawer .setting-item{
   display: flex;
   align-items: center;
+  margin: 20px 0;
 }
 .drawer .setting-item .option{
   flex: 1;
