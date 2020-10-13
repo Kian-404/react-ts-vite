@@ -1,6 +1,7 @@
 import React from 'react';
 import { Drawer, Radio, Switch } from 'antd'
 import { sidebartheme, } from '../../redux/models';
+import './index.css'
 
 interface propsType {
   visible: boolean,

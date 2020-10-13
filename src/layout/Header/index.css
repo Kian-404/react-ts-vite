@@ -21,12 +21,3 @@
 .trigger{
   margin: 0 20px;
 }
-.drawer .setting-item{
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-}
-.drawer .setting-item .option{
-  flex: 1;
-  text-align: right;
-}
