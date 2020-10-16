@@ -13,7 +13,10 @@ import {
   SettingOutlined,
   UserOutlined,
   SafetyOutlined,
-  SecurityScanOutlined
+  SecurityScanOutlined,
+  CodeOutlined,
+  FormOutlined,
+  AppstoreOutlined
 } from '@ant-design/icons'
 interface ItemProps {
   title: String,
@@ -49,6 +52,28 @@ export const SiderItems: Array<ItemProps> = [
     title: '页面管理',
     url: '/main/page-list',
     icon: <ProfileOutlined />
+  },
+   {
+    title: '扩展组件',
+    url: '/main/',
+    icon: <AppstoreOutlined />,
+    children: [
+      {
+        title: '富文本编辑器',
+        url: '/main/rishtext-editor',
+        icon: <FormOutlined />,
+      },
+      {
+        title: '代码编译器',
+        url: '/main/code-editor',
+        icon: <CodeOutlined />,
+      },
+      {
+        title: 'Markdown编译器',
+        url: '/main/markdown-editor',
+        icon: <FileMarkdownOutlined />,
+      }
+    ]
   },
   {
     title: '评论管理',

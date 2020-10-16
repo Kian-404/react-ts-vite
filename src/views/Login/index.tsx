@@ -6,6 +6,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 const Login = () => {
   const onFinish = (values: any) => {
     console.log('Received values of form: ', values);
+    window.location.href= '/';
   };
   return (
     <div className="login-page">

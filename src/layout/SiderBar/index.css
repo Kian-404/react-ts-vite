@@ -2,6 +2,12 @@
   height: 100vh;
   overflow: hidden;
 }
+.siderbar .ant-menu-item .anticon{
+  font-size: 20px;
+}
+.siderbar .ant-menu-submenu .anticon{
+  font-size: 20px !important;
+}
 .logo{
   height: 40px;
   line-height: 40px;
@@ -18,10 +24,6 @@
   overflow-x: hidden;
   overflow-y: scroll;
 }
-.sidebar-menu  .anticon{
-  font-size: 20px;
-}
-
 /*css主要部分的样式*/
 /*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
 

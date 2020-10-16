@@ -7,6 +7,8 @@ import ArticleList from '../views/ArticleList'
 import CommentList from '../views/CommentList'
 import PageList from '../views/PageList'
 import SystemSetting from '../views/SystemSetting'
+import RishText from '../views/Editor/RishText'
+import CodeText from '../views/Editor/CodeText'
 const Login = lazy(() => import('../views/Login'));
 const Layout = lazy(() => import('../layout'));
 import ERR_404 from '../views/ErrorPage/404'
@@ -19,6 +21,9 @@ export const MainRoutes = () => {
         <Route exact path="/main/about" component={About}></Route>
         <Route exact path="/main/comment-list" component={CommentList}></Route>
         <Route exact path="/main/page-list" component={PageList}></Route>
+        <Route exact path="/main/rishtext-editor" component={RishText}></Route>
+        <Route exact path="/main/code-editor" component={CodeText}></Route>
+        <Route exact path="/main/markdown-editor" component={PageList}></Route>
         <Route exact path="/main/article-list" component={ArticleList}></Route>
         <Route exact path="/main/system-setting" component={SystemSetting}></Route>
         <Route path="/*" component={ERR_404}></Route>
