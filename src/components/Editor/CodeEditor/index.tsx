@@ -1,8 +1,8 @@
 import React from "react";
 import AceEditor from "react-ace";
 
-import 'brace/mode/javcscript';
-import 'brace/theme/github';
+// import 'brace/mode/javcscript';
+// import 'brace/theme/github';
 
 
 // Render editor
