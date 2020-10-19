@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from 'antd';
 import E from 'wangeditor'
+import './index.css'
 
 let editor: E;
 const RichTextEditor = () => {
@@ -9,7 +10,7 @@ const RichTextEditor = () => {
 
   useEffect(() => {
     // 注：class写法需要在componentDidMount 创建编辑器
-    editor = new E("#div1")
+    editor = new E("#content")
 
     editor.config.onchange = (newHtml: React.SetStateAction<string>) => {
       setContent(newHtml)
@@ -40,8 +41,8 @@ const RichTextEditor = () => {
   }
 
   return (
-    <div>
-      <div id="div1"></div>
+    <div className="rishtext">
+      <div id="content"></div>
       <div className="option-list">
         <Button type="primary" onClick={getHtml1}>获取html</Button>
       </div>
