@@ -6,7 +6,7 @@
   "homepage": "./",
   "license": "MIT",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode development",
     "build": "tsc && vite build",
     "electron:start": "electron .",
     "electron:build": "electron-packager ./dist rui --platform=win32 --arch=x64 --out=./../out --app-version=0.0.1 --electron-version=6.0.1"

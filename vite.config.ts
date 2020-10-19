@@ -1,10 +1,3 @@
-/*
- * @Version: 
- * @Company: Venus
- * @Date: 2020-09-08 09:50:59
- * @LastEditors: Tian jianen
- * @LastEditTime: 2020-10-16 13:29:25
- */
 import * as reactPlugin from 'vite-plugin-react'
 import type { UserConfig } from 'vite'
 import path from 'path'
@@ -19,6 +12,11 @@ const config: UserConfig = {
     '/@components/': path.resolve(__dirname, './src/components'),
     '/@utils/': path.resolve(__dirname, './src/utils'),
   },
+  open: true,
+  https: false,
+  ssr: false,
+  outDir: process.env.VITE_OUTPUT_DIR,
+  
   optimizeDeps: {
     include: ['echarts', '@redux-model/react', 'ace-builds', 'brace']
   },
