@@ -278,23 +278,27 @@
   resolved "https://registry.npm.taobao.org/@pika/react/download/@pika/react-16.13.1.tgz#20e47997d2a2f1e5da39a8e28b75db2ec77d99c6"
   integrity sha1-IOR5l9Ki8eXaOajii3XbLsd9mcY=
 
-"@redux-model/core@8.2.2":
-  version "8.2.2"
-  resolved "https://registry.npm.taobao.org/@redux-model/core/download/@redux-model/core-8.2.2.tgz#f3c082eea5f9e8f0a3ade958bf9548320ab4fe0e"
-  integrity sha1-88CC7qX56PCjrelYv5VIMgq0/g4=
+"@redux-model/core@9.0.2":
+  version "9.0.2"
+  resolved "https://registry.npm.taobao.org/@redux-model/core/download/@redux-model/core-9.0.2.tgz#35df0c39f3b00331d53df961f34cf968d5a3318f"
+  integrity sha1-Nd8MOfOwAzHVPflh80z5aNWjMY8=
   dependencies:
     clone "2.1.2"
-    immer "7.0.9"
+    immer "7.0.14"
+    tslib "2.0.3"
 
-"@redux-model/react@^8.2.2":
-  version "8.2.2"
-  resolved "https://registry.npm.taobao.org/@redux-model/react/download/@redux-model/react-8.2.2.tgz#bad7fe7bff1b29fd6ee28af2846d744d36160833"
-  integrity sha1-utf+e/8bKf1u4oryhG10TTYWCDM=
+"@redux-model/react@^9.0.2":
+  version "9.0.2"
+  resolved "https://registry.npm.taobao.org/@redux-model/react/download/@redux-model/react-9.0.2.tgz#531c84dfcbbbdbe689fbb4cfcc6bb596aa9f98a5"
+  integrity sha1-UxyE38u72+aJ+7TPzGu1lqqfmKU=
   dependencies:
-    "@redux-model/core" "8.2.2"
+    "@redux-model/core" "9.0.2"
+    "@types/react-redux" "7.1.9"
     axios "0.19.2"
     promise-listen-catch "1.0.0"
-    tslib "2.0.1"
+    react-redux "7.2.1"
+    redux "4.0.5"
+    tslib "2.0.3"
 
 "@rollup/plugin-commonjs@^14.0.0":
   version "14.0.0"
@@ -418,7 +422,7 @@
 
 "@types/hoist-non-react-statics@^3.3.0":
   version "3.3.1"
-  resolved "https://registry.npm.taobao.org/@types/hoist-non-react-statics/download/@types/hoist-non-react-statics-3.3.1.tgz?cache=0&sync_timestamp=1596841579065&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fhoist-non-react-statics%2Fdownload%2F%40types%2Fhoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
+  resolved "https://registry.npm.taobao.org/@types/hoist-non-react-statics/download/@types/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
   integrity sha1-ESSq/lEYy1kZd66xzqrtEHDrA58=
   dependencies:
     "@types/react" "*"
@@ -507,7 +511,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-redux@^7.1.9":
+"@types/react-redux@7.1.9":
   version "7.1.9"
   resolved "https://registry.npm.taobao.org/@types/react-redux/download/@types/react-redux-7.1.9.tgz#280c13565c9f13ceb727ec21e767abe0e9b4aec3"
   integrity sha1-KAwTVlyfE863J+wh52er4Om0rsM=
@@ -1506,10 +1510,10 @@ ignore@^5.1.4:
   resolved "https://registry.npm.taobao.org/ignore/download/ignore-5.1.8.tgz?cache=0&sync_timestamp=1590809380232&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fignore%2Fdownload%2Fignore-5.1.8.tgz#f150a8b50a34289b33e22f5889abd4d8016f0e57"
   integrity sha1-8VCotQo0KJsz4i9YiavU2AFvDlc=
 
-immer@7.0.9:
-  version "7.0.9"
-  resolved "https://registry.npm.taobao.org/immer/download/immer-7.0.9.tgz?cache=0&sync_timestamp=1599661866460&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fimmer%2Fdownload%2Fimmer-7.0.9.tgz#28e7552c21d39dd76feccd2b800b7bc86ee4a62e"
-  integrity sha1-KOdVLCHTnddv7M0rgAt7yG7kpi4=
+immer@7.0.14:
+  version "7.0.14"
+  resolved "https://registry.npm.taobao.org/immer/download/immer-7.0.14.tgz?cache=0&sync_timestamp=1603236351037&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fimmer%2Fdownload%2Fimmer-7.0.14.tgz#3e605f8584b15a9520d2f2f3fda9441cc9170d25"
+  integrity sha1-PmBfhYSxWpUg0vLz/alEHMkXDSU=
 
 import-cwd@^2.0.0:
   version "2.1.0"
@@ -2622,9 +2626,9 @@ react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-i
   resolved "https://registry.npm.taobao.org/react-is/download/react-is-16.13.1.tgz?cache=0&sync_timestamp=1598612918330&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-is%2Fdownload%2Freact-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=
 
-react-redux@^7.2.1:
+react-redux@7.2.1:
   version "7.2.1"
-  resolved "https://registry.npm.taobao.org/react-redux/download/react-redux-7.2.1.tgz?cache=0&sync_timestamp=1595766116898&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-redux%2Fdownload%2Freact-redux-7.2.1.tgz#8dedf784901014db2feca1ab633864dee68ad985"
+  resolved "https://registry.npm.taobao.org/react-redux/download/react-redux-7.2.1.tgz#8dedf784901014db2feca1ab633864dee68ad985"
   integrity sha1-je33hJAQFNsv7KGrYzhk3uaK2YU=
   dependencies:
     "@babel/runtime" "^7.5.5"
@@ -2681,7 +2685,7 @@ readdirp@~3.4.0:
   dependencies:
     picomatch "^2.2.1"
 
-redux@^4.0.0, redux@^4.0.5:
+redux@4.0.5, redux@^4.0.0:
   version "4.0.5"
   resolved "https://registry.npm.taobao.org/redux/download/redux-4.0.5.tgz#4db5de5816e17891de8a80c424232d06f051d93f"
   integrity sha1-TbXeWBbheJHeioDEJCMtBvBR2T8=
@@ -2952,7 +2956,7 @@ supports-color@^7.1.0:
 
 symbol-observable@^1.2.0:
   version "1.2.0"
-  resolved "https://registry.npm.taobao.org/symbol-observable/download/symbol-observable-1.2.0.tgz?cache=0&sync_timestamp=1599184809614&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsymbol-observable%2Fdownload%2Fsymbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
+  resolved "https://registry.npm.taobao.org/symbol-observable/download/symbol-observable-1.2.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsymbol-observable%2Fdownload%2Fsymbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
   integrity sha1-wiaIrtTqs83C3+rLtWFmBWCgCAQ=
 
 terser@^4.6.2:
@@ -3015,10 +3019,10 @@ toidentifier@1.0.0:
   resolved "https://registry.npm.taobao.org/toidentifier/download/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
   integrity sha1-fhvjRw8ed5SLxD2Uo8j013UrpVM=
 
-tslib@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.npm.taobao.org/tslib/download/tslib-2.0.1.tgz?cache=0&sync_timestamp=1596753449034&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftslib%2Fdownload%2Ftslib-2.0.1.tgz#410eb0d113e5b6356490eec749603725b021b43e"
-  integrity sha1-QQ6w0RPltjVkkO7HSWA3JbAhtD4=
+tslib@2.0.3:
+  version "2.0.3"
+  resolved "https://registry.npm.taobao.org/tslib/download/tslib-2.0.3.tgz?cache=0&sync_timestamp=1602286730817&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftslib%2Fdownload%2Ftslib-2.0.3.tgz#8e0741ac45fc0c226e58a17bfc3e64b9bc6ca61c"
+  integrity sha1-jgdBrEX8DCJuWKF7/D5kubxsphw=
 
 tsscmp@1.0.6:
   version "1.0.6"
