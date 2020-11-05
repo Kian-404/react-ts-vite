@@ -18,7 +18,7 @@ import {
   FormOutlined,
   AppstoreOutlined
 } from '@ant-design/icons'
-interface ItemProps {
+export interface ItemProps {
   title: String,
   icon: any,
   children?: Array<ItemProps>,

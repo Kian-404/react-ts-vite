@@ -3,6 +3,9 @@ import { Model } from "@redux-model/react";
 interface CollapsedData {
   collapsed: boolean;
 }
+interface FixHeaderData {
+  fixheader: boolean;
+}
 interface ThemeData{
   theme: String
 }
@@ -19,6 +22,18 @@ class Collapsed extends Model<CollapsedData> {
   }
 }
 
+
+class FixHeader extends Model<FixHeaderData> {
+  setFixHeader = this.action((state, fixheader: boolean = true) => {
+    state.fixheader = fixheader;
+  });
+
+  protected initialState(): FixHeaderData {
+    return {
+      fixheader: false
+    };
+  }
+}
 class SidebarTheme extends Model<ThemeData>{
   setTheme = this.action((state, theme: string='dark') =>{
     state.theme = theme
@@ -32,4 +47,5 @@ class SidebarTheme extends Model<ThemeData>{
 }
 
 export const collapsed = new Collapsed();
+export const fixheader = new FixHeader();
 export const sidebartheme = new SidebarTheme();

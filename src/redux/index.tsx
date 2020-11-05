@@ -1,5 +1,5 @@
 import React from 'react';
-import { collapsed, sidebartheme } from './models'
+import { collapsed,fixheader, sidebartheme } from './models'
 import { createReduxStore } from "@redux-model/react";
 
 const store = createReduxStore({
@@ -9,6 +9,7 @@ const store = createReduxStore({
     storage: "local",
     allowlist: {
       collapsed,
+      fixheader,
       sidebartheme
     }
   },

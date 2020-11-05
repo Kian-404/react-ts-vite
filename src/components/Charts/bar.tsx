@@ -10,7 +10,7 @@ const BarChart = () => {
       title: { text: 'ECharts' },
       tooltip: {},
       xAxis: {
-        data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+        data: ["周一", "周二", "周三", "周四", "周五", "周六"]
       },
       yAxis: {},
       series: [{

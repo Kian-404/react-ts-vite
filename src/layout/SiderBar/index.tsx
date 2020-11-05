@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom'
 import { Layout, Menu } from 'antd';
-import { SiderItems } from './sideconfig';
+import { SiderItems, ItemProps } from './sideconfig';
 import { collapsed, sidebartheme } from '../../redux/models'
 import './index.css'
 const { Sider } = Layout;
@@ -9,7 +9,7 @@ const { Sider } = Layout;
 const { SubMenu, Item } = Menu
 // 递归侧边栏
 const SideMenu = (menus: any) => {
-  return menus.map((item: { children: any; title: any; icon: any; url: any; }) => {
+  return menus.map((item: ItemProps) => {
     if (item.children) {
       return (
         <SubMenu title={item.title} icon={item.icon} key={item.url}>
