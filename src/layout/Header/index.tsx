@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { Layout, Badge, Menu, Dropdown, Tooltip, List, Drawer, Radio, Switch } from 'antd';
-import { collapsed, sidebartheme } from '../../redux/models'
+import { collapsed, sidebar } from '../../redux/models'
 import SideDrawer from '../../components/Drawer'
 import {
   MenuUnfoldOutlined,
@@ -51,6 +51,7 @@ const Message = (
 )
 const MHeader: FC = () => {
   const collapsedflag = collapsed.useData();
+  const SideBar = sidebar.useData();
   console.log(collapsedflag);
 
   // 侧边抽屉显示隐藏
@@ -69,10 +70,11 @@ const MHeader: FC = () => {
     <>
       <Header className="site-layout-background header" style={{ padding: 0 }}>
         <div className="toggle-menu">
-          {React.createElement(collapsedflag.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+          {SideBar.siderbar ? React.createElement(collapsedflag.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
             className: 'trigger icon-item',
             onClick: () => collapsed.setCollapesd(!collapsedflag.collapsed),
-          })}
+          }) : ""
+          }
         </div>
         <div className="header-content">
           <div className="option-item">

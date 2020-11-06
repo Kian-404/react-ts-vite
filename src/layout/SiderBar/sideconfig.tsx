@@ -16,6 +16,8 @@ import {
   SecurityScanOutlined,
   CodeOutlined,
   FormOutlined,
+  MehOutlined,
+  RobotOutlined,
   AppstoreOutlined
 } from '@ant-design/icons'
 export interface ItemProps {
@@ -99,6 +101,29 @@ export const SiderItems: Array<ItemProps> = [
     title: '邮件管理',
     url: '/email-list',
     icon: <MailOutlined />
+  },
+  {
+    title: '权限页面',
+    url: '/main/auth-page',
+    icon: <MehOutlined />,
+    children: [
+      {
+        title: '403',
+        url: '/main/403',
+        icon: <RobotOutlined />
+      },
+      {
+        title: '404',
+        url: '/main/404',
+        icon: <RobotOutlined />
+      },
+      {
+        title: '500',
+        url: '/main/500',
+        icon: <RobotOutlined />
+      },
+    ]
+
   },
   {
     title: '系统设置',

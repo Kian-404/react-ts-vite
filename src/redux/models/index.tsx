@@ -6,6 +6,9 @@ interface CollapsedData {
 interface FixHeaderData {
   fixheader: boolean;
 }
+interface SideBarData {
+  siderbar: boolean;
+}
 interface ThemeData{
   theme: String
 }
@@ -30,7 +33,19 @@ class FixHeader extends Model<FixHeaderData> {
 
   protected initialState(): FixHeaderData {
     return {
-      fixheader: false
+      fixheader: true
+    };
+  }
+}
+
+class SideBar extends Model<SideBarData> {
+  setSdierBar = this.action((state, siderbar: boolean = true) => {
+    state.siderbar = siderbar;
+  });
+
+  protected initialState(): SideBarData {
+    return {
+      siderbar: true
     };
   }
 }
@@ -48,4 +63,5 @@ class SidebarTheme extends Model<ThemeData>{
 
 export const collapsed = new Collapsed();
 export const fixheader = new FixHeader();
+export const sidebar = new SideBar();
 export const sidebartheme = new SidebarTheme();
