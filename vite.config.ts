@@ -18,7 +18,7 @@ const config: UserConfig = {
   outDir: process.env.VITE_OUTPUT_DIR,
   
   optimizeDeps: {
-    include: ['echarts', '@redux-model/react', 'ace-builds', 'brace']
+    include: ['echarts', '@redux-model/react',]
   },
   proxy: {
     // string shorthand
