@@ -4,6 +4,7 @@ import { Route, Switch, HashRouter as Router, } from 'react-router-dom';
 import Home from '../views/Home'
 import About from '../views/About'
 import ArticleList from '../views/ArticleList'
+import ArticleNew from '../views/ArticleNew'
 import CommentList from '../views/CommentList'
 import PageList from '../views/PageList'
 import SystemSetting from '../views/SystemSetting'
@@ -27,6 +28,7 @@ export const MainRoutes = () => {
         <Route exact path="/main/code-editor" component={CodeText}></Route>
         <Route exact path="/main/markdown-editor" component={PageList}></Route>
         <Route exact path="/main/article-list" component={ArticleList}></Route>
+        <Route exact path="/main/article-new" component={ArticleNew}></Route>
         <Route exact path="/main/system-setting" component={SystemSetting}></Route>
         <Route exact path="/main/403" component={ERR_403}></Route>
         <Route exact path="/main/404" component={ERR_404}></Route>

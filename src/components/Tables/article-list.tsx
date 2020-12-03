@@ -1,35 +1,58 @@
-import React, { useEffect, useState } from 'react';
-import { List, Avatar } from 'antd';
+import React, { useEffect, useState, FC } from 'react';
+import { Table, Button } from 'antd';
+import './article-list.css'
+import { getArtileList } from '../../api/mock'
 
-const data = [
+const columns = [
   {
-    title: 'Ant Design Title 1',
+    title: '文章名称',
+    dataIndex: 'title',
+    key: 'tilte',
+    align:'center',
+    ellipsis:true
   },
   {
-    title: 'Ant Design Title 2',
+    title: '作者',
+    dataIndex: 'name',
+    key: 'title',
+    align:'center'
   },
   {
-    title: 'Ant Design Title 3',
+    title: '创建时间',
+    dataIndex: 'date',
+    key: 'date',
+    align:'center'
   },
   {
-    title: 'Ant Design Title 4',
+    title: '操作',
+    dataIndex: '',
+    key: 'x',
+    align:'center',
+    render: () => {
+      return (
+        <div className='btn-list'>
+          <Button type="primary" shape="round">详情</Button>
+          <Button type="primary" shape="round">编辑</Button>
+          <Button type="danger" shape="round">删除</Button>
+        </div>
+      )
+
+    },
   },
 ];
-const ArticleTable = () => {
+const ArticleTable: FC = () => {
+  const [dataSource, setdataSource] = useState([]);
+  useEffect(() => {
+    const ArtileList = () => {
+      getArtileList({}).then((res: any) => {
+        console.log(res.data);
+        setdataSource(res.data.data)
+      })
+    }
+    ArtileList();
+  }, []);
   return (
-    <List
-      itemLayout="horizontal"
-      dataSource={data}
-      renderItem={(item: { title: React.ReactNode; }) => (
-        <List.Item>
-          <List.Item.Meta
-            avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-            title={<a href="https://ant.design">{item.title}</a>}
-            description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-          />
-        </List.Item>
-      )}
-    />
+    <Table className="article-table" dataSource={dataSource} columns={columns} />
   )
 }
 console.log(ArticleTable);

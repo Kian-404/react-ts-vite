@@ -1,6 +1,6 @@
-.btn-option{
-  margin: 0 10px;
+.article-table .btn-list .ant-btn{
+  margin-right: 20px;
 }
-.btn-option .ant-btn{
-  margin: 0 10px;
+.article-table .btn-list .ant-btn:last-child{
+  margin-right: 0px;
 }
