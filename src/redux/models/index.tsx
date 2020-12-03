@@ -9,6 +9,9 @@ interface FixHeaderData {
 interface SideBarData {
   siderbar: boolean;
 }
+interface SideBarTypeData {
+  sidertype: String;
+}
 interface ThemeData{
   theme: String
 }
@@ -49,6 +52,17 @@ class SideBar extends Model<SideBarData> {
     };
   }
 }
+class SidebarType extends Model<SideBarTypeData>{
+  setType = this.action((state, sidertype: string='dark') =>{
+    state.sidertype = sidertype
+  })
+
+  protected initialState():SideBarTypeData{
+    return {
+      sidertype: 'inline'
+    }
+  }
+}
 class SidebarTheme extends Model<ThemeData>{
   setTheme = this.action((state, theme: string='dark') =>{
     state.theme = theme
@@ -64,4 +78,5 @@ class SidebarTheme extends Model<ThemeData>{
 export const collapsed = new Collapsed();
 export const fixheader = new FixHeader();
 export const sidebar = new SideBar();
+export const sidebartype = new SidebarType();
 export const sidebartheme = new SidebarTheme();

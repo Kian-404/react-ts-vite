@@ -1,6 +1,6 @@
 import React from 'react';
 import { Drawer, Radio, Switch } from 'antd'
-import { sidebartheme, fixheader, sidebar } from '../../redux/models';
+import { sidebartheme, fixheader, sidebar, sidebartype } from '../../redux/models';
 import './index.css'
 
 interface propsType {
@@ -12,13 +12,16 @@ const SideDrawer = ({ visible, onClose }: propsType) => {
   const sidebarTheme = sidebartheme.useData();
   const Sidebar = sidebar.useData();
   const fixHeader = fixheader.useData();
+  const sidebarType = sidebartype.useData();
   const DrawerTitle = "系统布局配置";
   const DrawerPlacement = "right";
   const options = [
     { label: '亮色', value: 'light' },
     { label: '暗色', value: 'dark' },
   ];
-
+  const changeMode = (checked: boolean) => {
+    sidebartype.setType(checked ? 'vertical' : 'inline');
+  };
   const ChangeTheme = (e: { target: { value: string | undefined; }; }) => {
     sidebartheme.setTheme(e.target.value)
     console.log('radio4 checked', e.target.value);
@@ -53,6 +56,12 @@ const SideDrawer = ({ visible, onClose }: propsType) => {
             optionType="button"
             buttonStyle="solid"
           />
+        </div>
+      </div>
+      <div className="setting-item">
+        <div className="text">Sider Mode</div>
+        <div className="option">
+          <Switch defaultChecked onChange={changeMode} />
         </div>
       </div>
       <div className="setting-item">
