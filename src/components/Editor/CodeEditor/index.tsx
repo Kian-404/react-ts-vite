@@ -14,8 +14,8 @@ import './index.css'
 
 const CodeEditor = () => {
   console.log(<AceEditor />)
-  const [modeType, setmodeType] = useState("console.log('hello javascript!')");
-  const [codeValue, setcodeValue] = useState('javascript');
+  const [modeType, setmodeType] = useState('javascript');
+  const [codeValue, setcodeValue] = useState("console.log('hello javascript!')");
   const onChange = (newValue: string) => {
     console.log("change", newValue);
   }
