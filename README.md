@@ -8,7 +8,7 @@ use react, typescript and vite build web site
 ###  :package: 打包工具 [vite](https://github.com/vitejs/vite)
 ###  :art: UI框架 [antd](https://ant.design/index-cn)
 ###  :dizzy: 状态管理 [redux-model](https://github.com/redux-model/redux-model)
-
+###  :candy: 数据模拟 [mockjs](https://github.com/nuysoft/Mock/tree/refactoring)
 
 ## Build Setup
 
