@@ -5,5 +5,5 @@
   overflow: unset;
 }
 .ant-layout-content.fixheader{
-  overflow: scroll;
+  overflow: auto;
 }
