@@ -18,7 +18,9 @@ import {
   FormOutlined,
   MehOutlined,
   RobotOutlined,
-  AppstoreOutlined
+  AppstoreOutlined,
+  InsertRowBelowOutlined,
+  TableOutlined
 } from '@ant-design/icons'
 export interface ItemProps {
   title: String,
@@ -55,7 +57,7 @@ export const SiderItems: Array<ItemProps> = [
     url: '/main/page-list',
     icon: <ProfileOutlined />
   },
-   {
+  {
     title: '扩展组件',
     url: '/main/',
     icon: <AppstoreOutlined />,
@@ -74,6 +76,33 @@ export const SiderItems: Array<ItemProps> = [
         title: 'Markdown编译器',
         url: '/main/markdown-editor',
         icon: <FileMarkdownOutlined />,
+      }
+    ]
+  },
+  {
+    title: 'Table组件',
+    url: '/table/',
+    icon: <InsertRowBelowOutlined />,
+    children: [
+      {
+        title: '基本表格',
+        url: '/main/table-base',
+        icon: <TableOutlined />,
+      },
+      {
+        title: '动态表格',
+        url: '/main/table-dynamic',
+        icon: <TableOutlined />,
+      },
+      {
+        title: '编辑表格',
+        url: '/main/table-edit',
+        icon: <TableOutlined />,
+      },
+      {
+        title: '多数据表格',
+        url: '/main/table-bigdata',
+        icon: <TableOutlined />,
       }
     ]
   },

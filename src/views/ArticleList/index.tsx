@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ArticleTable from '../../components/Tables/article-list'
+import ArticleTable from '../../components/Article/article-list'
 const ArticleList = () => {
   return (
     <div>

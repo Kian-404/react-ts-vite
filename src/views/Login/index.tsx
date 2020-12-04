@@ -6,6 +6,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 const Login = () => {
   const onFinish = (values: any) => {
     console.log('Received values of form: ', values);
+    sessionStorage.setItem('username', values.username)
     window.location.href= '/';
   };
   return (

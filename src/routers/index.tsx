@@ -12,6 +12,10 @@ import RishText from '../views/Editor/RishText'
 import CodeText from '../views/Editor/CodeText'
 const Login = lazy(() => import('../views/Login'));
 const Layout = lazy(() => import('../layout'));
+
+const BaseTable = lazy(() => import('../components/Tables/BaseTable'));
+const EditTable = lazy(() => import('../components/Tables/EditTable'));
+
 import ERR_403 from '../views/ErrorPage/403'
 import ERR_404 from '../views/ErrorPage/404'
 import ERR_500 from '../views/ErrorPage/500'
@@ -29,6 +33,8 @@ export const MainRoutes = () => {
         <Route exact path="/main/markdown-editor" component={PageList}></Route>
         <Route exact path="/main/article-list" component={ArticleList}></Route>
         <Route exact path="/main/article-new" component={ArticleNew}></Route>
+        <Route exact path="/main/table-base" component={BaseTable}></Route>
+        <Route exact path="/main/table-edit" component={EditTable}></Route>
         <Route exact path="/main/system-setting" component={SystemSetting}></Route>
         <Route exact path="/main/403" component={ERR_403}></Route>
         <Route exact path="/main/404" component={ERR_404}></Route>
