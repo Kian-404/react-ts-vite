@@ -27,3 +27,11 @@ export const getArtileList = (params: any) => {
     params
   })
 }
+
+export const getBaseTable = (params: any) => {
+  return request({
+    url: '/base-table',
+    method: 'get',
+    params
+  })
+}
