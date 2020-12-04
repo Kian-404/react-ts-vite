@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Input, InputNumber, Popconfirm, Form } from 'antd';
 import {getBaseTable} from '../../../api/mock'
+interface EditableCellType{
+  editing:string,
+  dataIndex:string,
+  title:string,
+  inputType:string,
+  record:string,
+  index:string,
+  children:string
+}
 
 const EditableCell = ({
   editing,
@@ -11,7 +20,7 @@ const EditableCell = ({
   index,
   children,
   ...restProps
-}) => {
+}:EditableCellType) => {
   const inputNode = inputType === 'number' ? <InputNumber /> : <Input />;
   return (
     <td {...restProps}>
@@ -72,12 +81,12 @@ const EditableTable = () => {
   const save = async (key: any) => {
     try {
       const row = await form.validateFields();
-      const newData = [...data];
-      const index = newData.findIndex((item) => key === item.key);
+      const newData:any = [...data];
+      const index = newData.findIndex((item: { key: any; }) => key === item.key);
 
       if (index > -1) {
         const item = newData[index];
-        newData.splice(index, 1, { ...item, ...row });
+        newData.splice(index, 1, { ...item , ...row });
         setData(newData);
         setEditingKey('');
       } else {
@@ -130,7 +139,7 @@ const EditableTable = () => {
             </Popconfirm>
           </span>
         ) : (
-            <a disabled={editingKey !== ''} onClick={() => edit(record)}>
+            <a aria-disabled = {editingKey !== ''} onClick={() => edit(record)}>
               Edit
             </a>
           );

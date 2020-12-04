@@ -74,7 +74,7 @@ const MHeader = () => {
 
   // 侧边抽屉显示隐藏
   const [visible, setVisible] = useState(false);
-  const [routes, setRoutes] = useState([]);
+  const [routes, setRoutes] = useState(['/']);
 
   const showDrawer = () => {
     setVisible(true);

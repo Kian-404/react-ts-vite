@@ -19,7 +19,7 @@ const CodeEditor = () => {
   const onChange = (newValue: string) => {
     console.log("change", newValue);
   }
-  const changeRadio = (e: EventTarget) => {
+  const changeRadio = (e:any) => {
     console.log(e);
     let typeValye: string = e.target.value;
     let codeValue: string = ""
