@@ -1,6 +1,6 @@
 import React from 'react';
 import { Drawer, Radio, Switch } from 'antd'
-import { sidebartheme, fixheader, sidebar, sidebartype } from '../../redux/models';
+import { sidebartheme, fixheader, sidebar, sidebartype, tagviewsflag } from '../../redux/models';
 import './index.css'
 
 interface propsType {
@@ -13,6 +13,8 @@ const SideDrawer = ({ visible, onClose }: propsType) => {
   const Sidebar = sidebar.useData();
   const fixHeader = fixheader.useData();
   const sidebarType = sidebartype.useData();
+  const tagViewsflag = tagviewsflag.useData();
+  
   const DrawerTitle = "系统布局配置";
   const DrawerPlacement = "right";
   const options = [
@@ -33,6 +35,7 @@ const SideDrawer = ({ visible, onClose }: propsType) => {
   }
   const changeTabs = (checked: boolean) => {
     console.log(`switch to ${checked}`);
+    tagviewsflag.setTagViewsFlag(checked)
   }
   const changeSidebar = (checked: boolean) => {
     sidebar.setSdierBar(checked);
@@ -79,7 +82,7 @@ const SideDrawer = ({ visible, onClose }: propsType) => {
       <div className="setting-item">
         <div className="text">开启多Tab</div>
         <div className="option">
-          <Switch defaultChecked onChange={changeTabs} />
+          <Switch onChange={changeTabs} />
         </div>
       </div>
     </Drawer>

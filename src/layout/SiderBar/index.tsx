@@ -7,8 +7,12 @@ import './index.css'
 const { Sider } = Layout;
 
 const { SubMenu, Item } = Menu
+
 // 递归侧边栏
 const SideMenu = (menus: any) => {
+  const showRoute = (item: ItemProps) => {
+    console.log(item)
+  }
   return menus.map((item: ItemProps) => {
     if (item.children) {
       return (
@@ -20,8 +24,8 @@ const SideMenu = (menus: any) => {
       )
     } else {
       return (
-        <Item key={item.url} icon={item.icon}>
-          <Link to={item.url}>
+        <Item key={item.url} icon={item.icon} onClick={()=>showRoute(item)}>
+          <Link to={item.url} >
             {item.title}
           </Link>
         </Item>

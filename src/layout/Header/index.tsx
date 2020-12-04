@@ -1,6 +1,7 @@
-import React, { FC, useState } from 'react';
-import { Layout, Badge, Menu, Dropdown, Tooltip, List, Drawer, Radio, Switch } from 'antd';
-import { collapsed, sidebar } from '../../redux/models'
+import React, { FC, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
+import { Layout, Badge, Menu, Dropdown, Tooltip, List,Tag, Drawer, Radio, Switch } from 'antd';
+import { collapsed, sidebar, tagviewsflag } from '../../redux/models'
 import SideDrawer from '../../components/Drawer'
 import {
   MenuUnfoldOutlined,
@@ -49,13 +50,31 @@ const Message = (
     )}
   />
 )
-const MHeader: FC = () => {
+const MHeader = () => {
+  useEffect(() => {
+    console.log(window.location.pathname);
+    let RouteName = window.location.pathname;
+    let tempRoutes = [];
+    if (routes.indexOf(RouteName) < 0) {
+      tempRoutes = [...routes, RouteName]
+
+    } else {
+      tempRoutes = [...routes];
+    }
+    setRoutes(tempRoutes)
+    console.log(routes)
+    return () => {
+      // cleanup
+    };
+  }, [window.location.pathname]);
   const collapsedflag = collapsed.useData();
   const SideBar = sidebar.useData();
+  const tagViewsFlag = tagviewsflag.useData();
   console.log(collapsedflag);
 
   // 侧边抽屉显示隐藏
   const [visible, setVisible] = useState(false);
+  const [routes, setRoutes] = useState([]);
 
   const showDrawer = () => {
     setVisible(true);
@@ -101,6 +120,20 @@ const MHeader: FC = () => {
           </div>
         </div>
       </Header>
+      {
+        tagViewsFlag.tagviewsflag ? <div className="tag-views">{
+          routes.map((item, index) => {
+            return (
+              <Tag>
+                <Link to={item} >
+                  {item}
+                </Link>
+              </Tag>
+            )
+          })
+        }</div> : ''
+      }
+
       <SideDrawer visible={visible} onClose={onClose} />
     </>
   )

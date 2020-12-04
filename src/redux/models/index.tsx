@@ -9,10 +9,13 @@ interface FixHeaderData {
 interface SideBarData {
   siderbar: boolean;
 }
+interface TagViewsFlagData {
+  tagviewsflag: boolean;
+}
 interface SideBarTypeData {
   sidertype: String;
 }
-interface ThemeData{
+interface ThemeData {
   theme: String
 }
 
@@ -52,23 +55,34 @@ class SideBar extends Model<SideBarData> {
     };
   }
 }
+class TagViewsFlag extends Model<TagViewsFlagData> {
+  setTagViewsFlag = this.action((state, tagviewsflag: boolean = true) => {
+    state.tagviewsflag = tagviewsflag;
+  });
+
+  protected initialState(): TagViewsFlagData {
+    return {
+      tagviewsflag: false
+    };
+  }
+}
 class SidebarType extends Model<SideBarTypeData>{
-  setType = this.action((state, sidertype: string='dark') =>{
+  setType = this.action((state, sidertype: string = 'dark') => {
     state.sidertype = sidertype
   })
 
-  protected initialState():SideBarTypeData{
+  protected initialState(): SideBarTypeData {
     return {
       sidertype: 'inline'
     }
   }
 }
 class SidebarTheme extends Model<ThemeData>{
-  setTheme = this.action((state, theme: string='dark') =>{
+  setTheme = this.action((state, theme: string = 'dark') => {
     state.theme = theme
   })
 
-  protected initialState():ThemeData{
+  protected initialState(): ThemeData {
     return {
       theme: 'dark'
     }
@@ -78,5 +92,6 @@ class SidebarTheme extends Model<ThemeData>{
 export const collapsed = new Collapsed();
 export const fixheader = new FixHeader();
 export const sidebar = new SideBar();
+export const tagviewsflag = new TagViewsFlag();
 export const sidebartype = new SidebarType();
 export const sidebartheme = new SidebarTheme();
