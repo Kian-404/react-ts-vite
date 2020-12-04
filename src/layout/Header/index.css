@@ -22,7 +22,15 @@
   margin: 0 20px;
 }
 .tag-views{
-  height: 30px;
   display: flex;
   align-items: center;
+  padding: 5px;
+  margin: 5px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.tag-views .ant-tag{
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
 }

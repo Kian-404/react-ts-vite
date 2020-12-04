@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Link } from 'react-router-dom'
 import { Layout, Menu } from 'antd';
 import { SiderItems, ItemProps } from './sideconfig';
-import { collapsed, sidebartheme, sidebartype } from '../../redux/models'
+import { collapsed, sidebartheme, sidebartype, tagviews } from '../../redux/models'
 import './index.css'
 const { Sider } = Layout;
 
@@ -10,8 +10,10 @@ const { SubMenu, Item } = Menu
 
 // 递归侧边栏
 const SideMenu = (menus: any) => {
+  const tagViews = tagviews.useData();
   const showRoute = (item: ItemProps) => {
     console.log(item)
+    tagviews.setTagViews(item);
   }
   return menus.map((item: ItemProps) => {
     if (item.children) {

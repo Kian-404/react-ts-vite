@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import { Layout, Badge, Menu, Dropdown, Tooltip, List,Tag, Drawer, Radio, Switch } from 'antd';
-import { collapsed, sidebar, tagviewsflag } from '../../redux/models'
+import { collapsed, sidebar, tagviewsflag, tagviews } from '../../redux/models'
 import SideDrawer from '../../components/Drawer'
 import {
   MenuUnfoldOutlined,
@@ -70,6 +70,7 @@ const MHeader = () => {
   const collapsedflag = collapsed.useData();
   const SideBar = sidebar.useData();
   const tagViewsFlag = tagviewsflag.useData();
+  const tagViews = tagviews.useData();
   console.log(collapsedflag);
 
   // 侧边抽屉显示隐藏
@@ -122,11 +123,11 @@ const MHeader = () => {
       </Header>
       {
         tagViewsFlag.tagviewsflag ? <div className="tag-views">{
-          routes.map((item, index) => {
+          tagViews.routes.map((item, index) => {
             return (
               <Tag>
-                <Link to={item} >
-                  {item}
+                <Link to={item.url} >
+            {item.icon}{item.title}
                 </Link>
               </Tag>
             )
