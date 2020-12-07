@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
+    "@lottiefiles/react-lottie-player": "^2.2.1",
     "@pika/react": "^16.13.1",
     "@pika/react-dom": "^16.13.1",
     "@redux-model/react": "^9.0.2",
