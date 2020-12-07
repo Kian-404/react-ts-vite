@@ -1,9 +1,0 @@
-.ant-layout-content{
-  margin: 24px 16px;
-  padding: 24px;
-  min-height: 280;
-  overflow: unset;
-}
-.ant-layout-content.fixheader{
-  overflow: auto;
-}
