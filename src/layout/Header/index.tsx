@@ -1,8 +1,9 @@
 import React, { FC, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
-import { Layout, Badge, Menu, Dropdown, Tooltip, List,Tag, Drawer, Radio, Switch } from 'antd';
+import { Layout, Badge, Menu, Dropdown, Tooltip, List, Tag, Drawer, Radio, Switch } from 'antd';
 import { collapsed, sidebar, tagviewsflag, tagviews } from '../../redux/models'
-import SideDrawer from '../../components/Drawer'
+import SideDrawer from '../../components/Drawer';
+import { ItemProps } from '../SiderBar/sideconfig';
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -76,6 +77,7 @@ const MHeader = () => {
   // 侧边抽屉显示隐藏
   const [visible, setVisible] = useState(false);
   const [routes, setRoutes] = useState(['/']);
+  const [tagColor, setTagColor] = useState(-1);
 
   const showDrawer = () => {
     setVisible(true);
@@ -85,6 +87,13 @@ const MHeader = () => {
   };
   const githubLink = () => {
     window.open('https://github.com/Kian-404/react-ts-vite')
+  }
+  const TagStatus = (index: number) => {
+    console.log(index);
+    setTagColor(index);
+  }
+  const closeTag = (e: ItemProps) => {
+    console.log(e)
   }
   return (
     <>
@@ -123,11 +132,11 @@ const MHeader = () => {
       </Header>
       {
         tagViewsFlag.tagviewsflag ? <div className="tag-views">{
-          tagViews.routes.map((item, index) => {
+          tagViews.routes.map((item: ItemProps, index: number) => {
             return (
-              <Tag>
+              <Tag closable onClose={() => closeTag(item)} color={tagColor == index ? '#87d068' : ''} onClick={() => TagStatus(index)}>
                 <Link to={item.url} >
-            {item.icon}{item.title}
+                  {item.icon}{item.title}
                 </Link>
               </Tag>
             )

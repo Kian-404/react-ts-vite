@@ -13,7 +13,17 @@ const SideMenu = (menus: any) => {
   const tagViews = tagviews.useData();
   const showRoute = (item: ItemProps) => {
     console.log(item)
-    tagviews.setTagViews(item);
+    console.log(tagViews.routes);
+    let isNotArray = true;
+    tagViews.routes.forEach((route: { title: String; }, index: any) => {
+      if (route.title === item.title) {
+        isNotArray = false;
+      }
+    })
+    if (isNotArray) {
+      tagviews.setTagViews(item);
+
+    }
   }
   return menus.map((item: ItemProps) => {
     if (item.children) {
@@ -26,7 +36,7 @@ const SideMenu = (menus: any) => {
       )
     } else {
       return (
-        <Item key={item.url} icon={item.icon} onClick={()=>showRoute(item)}>
+        <Item key={item.url} icon={item.icon} onClick={() => showRoute(item)}>
           <Link to={item.url} >
             {item.title}
           </Link>

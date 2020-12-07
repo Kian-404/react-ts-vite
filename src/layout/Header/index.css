@@ -34,3 +34,6 @@
   line-height: 30px;
   font-size: 14px;
 }
+.tag-views .ant-tag .anticon {
+  margin: 0 3px;
+}
