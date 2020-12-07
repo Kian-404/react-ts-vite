@@ -23,3 +23,5 @@ yarn dev
 yarn build
 
 ```
+
+![截图](./docs/img/home.png)
