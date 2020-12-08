@@ -1,25 +1,25 @@
 // 引入electron并创建一个Browserwindow
-const {app, BrowserWindow} = require('electron')
+const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const url = require('url')
 const pkg = require('./package.json') // 引用package.json 
 // 保持window对象的全局引用,避免JavaScript对象被垃圾回收时,窗口被自动关闭.
 let mainWindow;
 
-function createWindow () {
-//创建浏览器窗口,宽高自定义具体大小你开心就好
-mainWindow = new BrowserWindow({width: 800, height: 600})
+function createWindow() {
+  //创建浏览器窗口,宽高自定义具体大小你开心就好
+  mainWindow = new BrowserWindow({ width: 800, height: 600 })
 
   // 加载应用----适用于 react 项目
-  mainWindow.loadURL('http://localhost:3000/');
+  // mainWindow.loadURL('http://localhost:3000/');
   /* 
    * 加载应用-----  electron-quick-start中默认的加载入口
-    mainWindow.loadURL(url.format({
-      pathname: path.join(__dirname, './dist/index.html'),
-      protocol: 'file:',
-      slashes: true
-    }))
-  */
+   */
+  mainWindow.loadURL(url.format({
+    pathname: path.join(__dirname, './dist/index.html'),
+    protocol: 'file:',
+    slashes: true
+  }))
   // if(pkg.DEV) { 
   //   mainWindow.loadURL("http://localhost:3000/")
   // } else { 
@@ -50,7 +50,7 @@ app.on('window-all-closed', function () {
 })
 
 app.on('activate', function () {
-   // macOS中点击Dock图标时没有已打开的其余应用窗口时,则通常在应用中重建一个窗口
+  // macOS中点击Dock图标时没有已打开的其余应用窗口时,则通常在应用中重建一个窗口
   if (mainWindow === null) {
     createWindow()
   }
