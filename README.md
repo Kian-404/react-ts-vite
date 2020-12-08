@@ -1,3 +1,10 @@
+<!--
+ * @Version: 
+ * @Company: Venus
+ * @Date: 2020-12-07 15:31:57
+ * @LastEditors: Kian_
+ * @LastEditTime: 2020-12-08 17:17:52
+-->
 # react-ts-vite
 use react, typescript and vite build web site
 
@@ -22,6 +29,8 @@ yarn dev
 # build for production with minification
 yarn build
 
+#build electron exe before exec yarn build 
+npm run dist:win
 ```
 ---
 
