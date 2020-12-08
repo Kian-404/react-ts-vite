@@ -10,6 +10,7 @@ import PageList from '../views/PageList'
 import SystemSetting from '../views/SystemSetting'
 import RishText from '../views/Editor/RishText'
 import CodeText from '../views/Editor/CodeText'
+import MarkDown from '../components/Editor/MarkDown'
 const Login = lazy(() => import('../views/Login'));
 const Layout = lazy(() => import('../layout'));
 
@@ -30,7 +31,7 @@ export const MainRoutes = () => {
         <Route exact path="/main/page-list" component={PageList}></Route>
         <Route exact path="/main/rishtext-editor" component={RishText}></Route>
         <Route exact path="/main/code-editor" component={CodeText}></Route>
-        <Route exact path="/main/markdown-editor" component={PageList}></Route>
+        <Route exact path="/main/markdown-editor" component={MarkDown}></Route>
         <Route exact path="/main/article-list" component={ArticleList}></Route>
         <Route exact path="/main/article-new" component={ArticleNew}></Route>
         <Route exact path="/main/table-base" component={BaseTable}></Route>

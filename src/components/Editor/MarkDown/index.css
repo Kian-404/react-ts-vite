@@ -1,0 +1,16 @@
+.markdown-wrapper .mark-down {
+  width: 100%;
+  display: flex;
+
+}
+.markdown-wrapper .mark-down .left{
+  flex: 1;
+  margin: 0 10px;
+}
+.markdown-wrapper .mark-down .right{
+  flex: 1;
+  margin: 0 10px;
+}
+.markdown-wrapper .btn-list{
+  margin-bottom: 20px;
+}
