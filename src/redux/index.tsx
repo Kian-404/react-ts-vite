@@ -22,6 +22,7 @@ const store = createReduxStore({
     //   diff: true,
     //   duration: true
     // })
-  ]
+  ],
+  compose: process.env.NODE_ENV === 'production' ? 'default' : 'redux-devtools',
 });
  export default store
