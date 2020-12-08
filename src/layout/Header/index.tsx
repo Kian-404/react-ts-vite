@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import { Layout, Badge, Menu, Dropdown, Tooltip, List, Tag, Drawer, Radio, Switch } from 'antd';
-import { collapsed, sidebar, tagviewsflag, tagviews } from '../../redux/models'
+import { collapsed, sidebar, tagviewsflag, tagviews, currentTag } from '../../redux/models'
 import SideDrawer from '../../components/Drawer';
 import { ItemProps } from '../SiderBar/sideconfig';
 import {
@@ -72,12 +72,12 @@ const MHeader = () => {
   const SideBar = sidebar.useData();
   const tagViewsFlag = tagviewsflag.useData();
   const tagViews = tagviews.useData();
+  const HighlightTag = currentTag.useData();
   console.log(collapsedflag);
 
   // 侧边抽屉显示隐藏
   const [visible, setVisible] = useState(false);
   const [routes, setRoutes] = useState(['/']);
-  const [tagColor, setTagColor] = useState(-1);
 
   const showDrawer = () => {
     setVisible(true);
@@ -88,12 +88,16 @@ const MHeader = () => {
   const githubLink = () => {
     window.open('https://github.com/Kian-404/react-ts-vite')
   }
-  const TagStatus = (index: number) => {
-    console.log(index);
-    setTagColor(index);
+  const TagStatus = (item: ItemProps) => {
+    currentTag.setCurrentTag(item)
   }
-  const closeTag = (e: ItemProps) => {
-    console.log(e)
+  const closeTag = (item: ItemProps, index: number) => {
+    console.log(item);
+    console.log(index);
+    let tempItem = tagViews.routes[index - 1]
+    console.log(tempItem);
+    currentTag.setCurrentTag(tempItem)
+    tagviews.removeTagViews(index);
   }
   return (
     <>
@@ -134,7 +138,7 @@ const MHeader = () => {
         tagViewsFlag.tagviewsflag ? <div className="tag-views">{
           tagViews.routes.map((item: ItemProps, index: number) => {
             return (
-              <Tag closable onClose={() => closeTag(item)} color={tagColor == index ? '#87d068' : ''} onClick={() => TagStatus(index)}>
+              <Tag closable onClose={() => closeTag(item, index)} color={HighlightTag.currentTag.key == item.key ? '#87d068' : ''} onClick={() => TagStatus(item)}>
                 <Link to={item.url} >
                   {item.icon}{item.title}
                 </Link>

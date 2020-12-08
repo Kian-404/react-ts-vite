@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Link } from 'react-router-dom'
 import { Layout, Menu } from 'antd';
 import { SiderItems, ItemProps } from './sideconfig';
-import { collapsed, sidebartheme, sidebartype, tagviews } from '../../redux/models'
+import { collapsed, sidebartheme, sidebartype, tagviews, currentTag } from '../../redux/models'
 import './index.css'
 const { Sider } = Layout;
 
@@ -11,6 +11,7 @@ const { SubMenu, Item } = Menu
 // 递归侧边栏
 const SideMenu = (menus: any) => {
   const tagViews = tagviews.useData();
+  const HighlightTag = currentTag.useData();
   const showRoute = (item: ItemProps) => {
     console.log(item)
     console.log(tagViews.routes);
@@ -22,13 +23,13 @@ const SideMenu = (menus: any) => {
     })
     if (isNotArray) {
       tagviews.setTagViews(item);
-
     }
+    currentTag.setCurrentTag(item);
   }
   return menus.map((item: ItemProps) => {
     if (item.children) {
       return (
-        <SubMenu title={item.title} icon={item.icon} key={item.url}>
+        <SubMenu title={item.title} icon={item.icon} key={item.key}>
           {
             SideMenu(item.children)
           }
@@ -36,7 +37,7 @@ const SideMenu = (menus: any) => {
       )
     } else {
       return (
-        <Item key={item.url} icon={item.icon} onClick={() => showRoute(item)}>
+        <Item key={item.key} icon={item.icon} onClick={() => showRoute(item)}>
           <Link to={item.url} >
             {item.title}
           </Link>
@@ -51,10 +52,11 @@ const MSider: FC = () => {
   const collapsedflag = collapsed.useData();
   const sidebarTheme = sidebartheme.useData();
   const sidebarType = sidebartype.useData();
+  const HighlightTag = currentTag.useData();
   return (
     <Sider className="siderbar" trigger={null} theme={sidebarTheme.theme} collapsible collapsed={collapsedflag.collapsed}>
       <div className={`logo ${sidebarTheme.theme === 'dark' ? '' : 'light'}`}  >Hello </div>
-      <Menu className='sidebar-menu' theme={sidebarTheme.theme} mode={sidebarType.sidertype} defaultSelectedKeys={defaultSelectedKeys}>
+      <Menu className='sidebar-menu' selectedKeys={[HighlightTag.currentTag.key]} theme={sidebarTheme.theme} mode={sidebarType.sidertype} defaultSelectedKeys={defaultSelectedKeys}>
         {SideMenu(SiderItems)}
       </Menu>
     </Sider>

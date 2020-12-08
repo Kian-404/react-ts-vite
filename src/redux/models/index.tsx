@@ -22,6 +22,9 @@ interface ThemeData {
 interface TagViewsData {
   routes: Array<ItemProps>
 }
+interface SelectTag {
+  currentTag: ItemProps
+}
 
 class Collapsed extends Model<CollapsedData> {
   setCollapesd = this.action((state, collapsed: boolean = true) => {
@@ -70,14 +73,41 @@ class TagViewsFlag extends Model<TagViewsFlagData> {
     };
   }
 }
+class CurrentTag extends Model<SelectTag> {
+  setCurrentTag = this.action((state, tag: ItemProps) => {
+    state.currentTag = tag;
+  });
+
+  protected initialState(): SelectTag {
+    return {
+      currentTag: {
+        key: '1',
+        title: '首页',
+        url: '/',
+        icon: ''
+      },
+    };
+  }
+}
 class TagViews extends Model<TagViewsData> {
   setTagViews = this.action((state, route: ItemProps) => {
     state.routes.push(route);
   });
-
+  removeTagViews = this.action((state, index: number) => {
+    console.log(state.routes);
+    state.routes.splice(index, 1);
+    console.log(state.routes);
+  });
   protected initialState(): TagViewsData {
     return {
-      routes: []
+      routes: [
+        {
+          key: '1',
+          title: '首页',
+          url: '/',
+          icon: ''
+        }
+      ]
     };
   }
 }
@@ -109,5 +139,6 @@ export const fixheader = new FixHeader();
 export const sidebar = new SideBar();
 export const tagviewsflag = new TagViewsFlag();
 export const tagviews = new TagViews();
+export const currentTag = new CurrentTag();
 export const sidebartype = new SidebarType();
 export const sidebartheme = new SidebarTheme();
