@@ -16,7 +16,7 @@ const ERR_404 = () => {
       <Player
         autoplay
         loop
-        src={animationData}
+        src={animationData as unknown as string}
         style={{ "height": '400px', "max-width": '800px' }}
       >
         <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
