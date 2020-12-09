@@ -9,6 +9,9 @@
     "productName": "react-ts-vite",
     "appId": "org.electron.vite",
     "copyright":"kian_",
+    "directories": {
+      "output": "build"
+    },
     "files": [
       {
         "from": "./",
@@ -22,16 +25,21 @@
     "win": {
       "icon": "build/icons/icon.ico"
     },
-    "directories": {
-      "output": "build"
+    "linux": {
+      "icon": "build/icons"
+    },
+    "mac": {
+      "icon": "build/icons/icon.icns"
     }
   },
   "scripts": {
     "dev": "vite --mode development",
     "build": "tsc && vite build",
     "electron:start": "electron .",
-    "electron:build": "electron-packager ./dist rui --win --arch=x64 --out=./../out --app-version=0.0.1 --electron-version=10.1.1",
-    "dist:win": "electron-builder"
+    "dist": "electron-builder -mwl",
+    "dist:win": "electron-builder --win",
+    "dist:linux": "electron-builder --linux",
+    "dist:mac": "electron-builder --mac"
   },
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
