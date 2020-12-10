@@ -20,10 +20,11 @@ import {
   RobotOutlined,
   AppstoreOutlined,
   InsertRowBelowOutlined,
-  TableOutlined
+  TableOutlined,
+  SendOutlined
 } from '@ant-design/icons'
 export interface ItemProps {
-  key:string,
+  key: string,
   title: String,
   icon: any,
   children?: Array<ItemProps>,
@@ -32,174 +33,180 @@ export interface ItemProps {
 }
 export const SiderItems: Array<ItemProps> = [
   {
-    key:'1',
+    key: '1',
     title: '首页',
     url: '/',
     icon: <DashboardOutlined />
   },
   {
-    key:'2',
+    key: 'guide',
+    title: '引导页',
+    url: '/guide',
+    icon: <SendOutlined rotate="-45" />
+  },
+  {
+    key: '2',
     title: '文章管理',
-    url: '/main/article-list',
+    url: '/article-list',
     icon: <EditOutlined />,
     children: [
       {
-        key:'2-1',
+        key: '2-1',
         title: '文章列表',
-        url: '/main/article-list',
+        url: '/article-list',
         icon: <OrderedListOutlined />,
       },
       {
-        key:'2-2',
+        key: '2-2',
         title: '新建文章',
-        url: '/main/article-new',
+        url: '/article-new',
         icon: <EditOutlined />,
       }
     ]
   },
   {
-    key:'3',
+    key: '3',
     title: '页面管理',
-    url: '/main/page-list',
+    url: '/page-list',
     icon: <ProfileOutlined />
   },
   {
-    key:'4',
+    key: '4',
     title: '扩展组件',
-    url: '/main/',
+    url: '/',
     icon: <AppstoreOutlined />,
     children: [
       {
-        key:'4-1',
+        key: '4-1',
         title: '富文本编辑器',
-        url: '/main/rishtext-editor',
+        url: '/rishtext-editor',
         icon: <FormOutlined />,
       },
       {
-        key:'4-2',
+        key: '4-2',
         title: '代码编译器',
-        url: '/main/code-editor',
+        url: '/code-editor',
         icon: <CodeOutlined />,
       },
       {
-        key:'4-3',
+        key: '4-3',
         title: 'Markdown编译器',
-        url: '/main/markdown-editor',
+        url: '/markdown-editor',
         icon: <FileMarkdownOutlined />,
       }
     ]
   },
   {
-    key:'5',
+    key: '5',
     title: 'Table组件',
     url: '/table/',
     icon: <InsertRowBelowOutlined />,
     children: [
       {
-        key:'5-1',
+        key: '5-1',
         title: '基本表格',
-        url: '/main/table-base',
+        url: '/table-base',
         icon: <TableOutlined />,
       },
       {
-        key:'5-2',
+        key: '5-2',
         title: '动态表格',
-        url: '/main/table-dynamic',
+        url: '/table-dynamic',
         icon: <TableOutlined />,
       },
       {
-        key:'5-3',
+        key: '5-3',
         title: '编辑表格',
-        url: '/main/table-edit',
+        url: '/table-edit',
         icon: <TableOutlined />,
       },
       {
-        key:'5-4',
+        key: '5-4',
         title: '多数据表格',
-        url: '/main/table-bigdata',
+        url: '/table-bigdata',
         icon: <TableOutlined />,
       }
     ]
   },
   {
-    key:'6',
+    key: '6',
     title: '评论管理',
-    url: '/main/main/comment-list',
+    url: '/comment-list',
     icon: <MessageOutlined />
   },
   {
-    key:'7',
+    key: '7',
     title: '文件管理',
-    url: '/main/file-list',
+    url: '/file-list',
     icon: <FileMarkdownOutlined />
   },
   {
-    key:'8',
+    key: '8',
     title: '搜索记录',
-    url: '/main/search-list',
+    url: '/search-list',
     icon: <FileSearchOutlined />
   },
   {
-    key:'9',
+    key: '9',
     title: '访问统计',
     url: '/history-list',
     icon: <LineChartOutlined />
   },
   {
-    key:'10',
+    key: '10',
     title: '邮件管理',
     url: '/email-list',
     icon: <MailOutlined />
   },
   {
-    key:'11',
+    key: '11',
     title: '权限页面',
-    url: '/main/auth-page',
+    url: '/auth-page',
     icon: <MehOutlined />,
     children: [
       {
-        key:'11-1',
+        key: '11-1',
         title: '403',
-        url: '/main/403',
+        url: '/403',
         icon: <RobotOutlined />
       },
       {
-        key:'11-2',
+        key: '11-2',
         title: '404',
-        url: '/main/404',
+        url: '/404',
         icon: <RobotOutlined />
       },
       {
-        key:'11-3',
+        key: '11-3',
         title: '500',
-        url: '/main/500',
+        url: '/500',
         icon: <RobotOutlined />
       },
     ]
 
   },
   {
-    key:'12',
+    key: '12',
     title: '系统设置',
-    url: '/main/system-setting',
+    url: '/system-setting',
     icon: <SettingOutlined />,
     children: [
       {
-        key:'12-1',
+        key: '12-1',
         title: '个人中心',
-        url: '/main/about',
+        url: '/about',
         icon: <UserOutlined />
       },
       {
-        key:'12-2',
+        key: '12-2',
         title: '安全设置',
-        url: '/main/safesetting',
+        url: '/safesetting',
         icon: <SafetyOutlined />
       },
       {
-        key:'12-3',
+        key: '12-3',
         title: '权限设置',
-        url: '/main/securitysetting',
+        url: '/securitysetting',
         icon: <SecurityScanOutlined />
       },
     ]
