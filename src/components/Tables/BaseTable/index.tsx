@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Table } from 'antd'
-import {getBaseTable, } from '../../../api/mock'
+import { getBaseTable, } from '../../../api/mock'
 const columns = [
   {
     title: 'Name',
@@ -13,8 +13,8 @@ const columns = [
     sorter: (a: { age: number; }, b: { age: number; }) => a.age - b.age,
   },
   {
-    title:'gender',
-    dataIndex:'gender',
+    title: 'gender',
+    dataIndex: 'gender',
     filters: [
       {
         text: '男',
@@ -39,19 +39,21 @@ function onChange(pagination: any, filters: any, sorter: any, extra: any) {
 const BaseTable = () => {
   const [dataSource, setdataSource] = useState([]);
   useEffect(() => {
-    const BaseTableData = () =>{
-      getBaseTable({}).then(res =>{
+    const BaseTableData = () => {
+      getBaseTable({}).then(res => {
         console.log(res.data)
         setdataSource(res.data.data);
       })
     }
     BaseTableData();
     return () => {
-      
+
     };
   }, []);
   return (
-    <Table columns={columns} dataSource={dataSource} onChange={onChange} />
+    <>
+      <Table columns={columns} dataSource={dataSource} pagination={{ defaultCurrent: 6, total: 500 }} onChange={onChange} />
+    </>
   )
 }
 

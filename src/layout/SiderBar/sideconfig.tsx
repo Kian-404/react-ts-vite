@@ -21,8 +21,12 @@ import {
   AppstoreOutlined,
   InsertRowBelowOutlined,
   TableOutlined,
-  SendOutlined
+  SendOutlined,
+  BarChartOutlined
 } from '@ant-design/icons'
+import { PieChartOutlined } from '@ant-design/icons'
+import { RadarChartOutlined } from '@ant-design/icons'
+import { AreaChartOutlined } from '@ant-design/icons'
 export interface ItemProps {
   key: string,
   title: String,
@@ -125,6 +129,38 @@ export const SiderItems: Array<ItemProps> = [
         title: '多数据表格',
         url: '/table-bigdata',
         icon: <TableOutlined />,
+      }
+    ]
+  },
+  {
+    key: 'chart',
+    title: '图表组件',
+    url: '/chart/',
+    icon: <BarChartOutlined />,
+    children: [
+      {
+        key: 'line-chart',
+        title: '折线图',
+        url: '/line-chart',
+        icon: <LineChartOutlined />,
+      },
+      {
+        key: 'pie-chart',
+        title: '饼状图',
+        url: '/pie-chart',
+        icon: <PieChartOutlined />,
+      },
+      {
+        key: 'radar-chart',
+        title: '雷达图',
+        url: '/radar-chart',
+        icon: <RadarChartOutlined />,
+      },
+      {
+        key: 'area-chart',
+        title: '区域图',
+        url: '/area-chart',
+        icon: <AreaChartOutlined />,
       }
     ]
   },

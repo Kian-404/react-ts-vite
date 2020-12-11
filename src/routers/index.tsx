@@ -17,6 +17,9 @@ const Layout = lazy(() => import('../layout'));
 
 const BaseTable = lazy(() => import('../components/Tables/BaseTable'));
 const EditTable = lazy(() => import('../components/Tables/EditTable'));
+const LineChart = lazy(() => import('../components/Charts/line'));
+const BarChart = lazy(() => import('../components/Charts/bar'));
+const PieChart = lazy(() => import('../components/Charts/pie'));
 
 import ERR_403 from '../views/ErrorPage/403'
 import ERR_404 from '../views/ErrorPage/404'
@@ -38,6 +41,10 @@ export const MainRoutes = () => {
         <Route exact path="/article-new" component={ArticleNew}></Route>
         <Route exact path="/table-base" component={BaseTable}></Route>
         <Route exact path="/table-edit" component={EditTable}></Route>
+        <Route exact path="/line-chart" component={LineChart}></Route>
+        <Route exact path="/bar-chart" component={BarChart}></Route>
+        <Route exact path="/pie-chart" component={PieChart}></Route>
+
         <Route exact path="/system-setting" component={SystemSetting}></Route>
         <Route exact path="/403" component={ERR_403}></Route>
         <Route exact path="/404" component={ERR_404}></Route>
