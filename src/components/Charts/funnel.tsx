@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 
 import echarts from 'echarts'
-
+import './style/chart.css'
 const FunnelChart = () => {
   useEffect(() => {
     const element: any = document.querySelector('#funnelchart');
-    var myChart = echarts.init(element);
+    var funnelchart = echarts.init(element);
     // 绘制图表
-    myChart.setOption({
+    funnelchart.setOption({
       title: {
         text: '漏斗图',
         subtext: '纯属虚构'
@@ -73,9 +73,12 @@ const FunnelChart = () => {
         }
       ]
     })
+    window.onresize = () => {
+      funnelchart.resize();
+    }
   })
     return (
-      <div id="funnelchart" style={{ width: 400, height: 400 }}></div>
+      <div id="funnelchart" className="chart" ></div>
     );
   }
 

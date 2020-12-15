@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 
 // 引入 ECharts 主模块
 import echarts from 'echarts';
-
+import './style/chart.css'
 const PieChart = () => {
   useEffect(() => {
     const element: any = document.querySelector('#pieChart');
-    var myChart = echarts.init(element);
+    var pieChart = echarts.init(element);
     // 绘制图表
-    myChart.setOption({
+    pieChart.setOption({
       title: {
         text: '某站点用户访问来源',
         subtext: '纯属虚构',
@@ -46,10 +46,13 @@ const PieChart = () => {
         }
       ]
     });
+    window.onresize = () => {
+      pieChart.resize();
+    }
   })
 
   return (
-    <div id="pieChart" style={{ width: 400, height: 400 }}></div>
+    <div id="pieChart" className="chart" ></div>
   );
 }
 

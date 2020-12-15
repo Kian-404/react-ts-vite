@@ -153,13 +153,13 @@ export const SiderItems: Array<ItemProps> = [
       {
         key: 'radar-chart',
         title: '雷达图',
-        url: '/radar-chart',
+        url: '/bar-chart',
         icon: <RadarChartOutlined />,
       },
       {
         key: 'area-chart',
         title: '区域图',
-        url: '/area-chart',
+        url: '/funnel-chart',
         icon: <AreaChartOutlined />,
       }
     ]

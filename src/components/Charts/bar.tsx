@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import echarts from 'echarts'
+import './style/chart.css'
 
 const BarChart = () => {
   useEffect(() => {
     const element: any = document.querySelector('#barchart');
-    var myChart = echarts.init(element);
+    var barchart = echarts.init(element);
     // 绘制图表
-    myChart.setOption({
+    barchart.setOption({
       title: { text: 'ECharts' },
       tooltip: {},
       xAxis: {
@@ -20,7 +21,8 @@ const BarChart = () => {
       }]
     });
     window.onresize = () => {
-      myChart.resize();
+      console.log('chart1 resize')
+      barchart.resize();
     }
     return () => {
 
@@ -28,7 +30,7 @@ const BarChart = () => {
   });
 
   return (
-    <div id="barchart" style={{ width: 400, height: 400 }}></div>
+    <div id="barchart" className="chart"></div>
   )
 }
 

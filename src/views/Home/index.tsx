@@ -16,22 +16,30 @@ const Home: FC = () => {
         </Col>
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
           <Card className="card" title="数据统计" hoverable bordered={false} >
-            <LineChart />
+            <div className="chart-area">
+              <LineChart />
+            </div>
           </Card>
         </Col>
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
           <Card className="card" title="数据统计" hoverable bordered={true} >
-            <BarChart />
+            <div className="chart-area">
+              <BarChart />
+            </div>
           </Card>
         </Col>
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
           <Card className="card" title="数据统计" hoverable bordered={false} >
-            <PieChart />
+            <div className="chart-area">
+              <PieChart />
+            </div>
           </Card>
         </Col>
         <Col xs={24} sm={24} md={24} lg={12} xl={12}>
           <Card className="card" title="数据统计" hoverable bordered={false} >
-            <FunnelChart />
+            <div className="chart-area">
+              <FunnelChart />
+            </div>
           </Card>
         </Col>
       </Row>
