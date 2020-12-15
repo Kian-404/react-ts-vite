@@ -5,7 +5,7 @@ import path from 'path'
 const config: UserConfig = {
   jsx: 'react',
   plugins: [reactPlugin],
-  base: './',
+  base: '/react-ts-vite',
   // 导入文件夹别名
   alias: {
     '/@/': path.resolve(__dirname, './src'),
