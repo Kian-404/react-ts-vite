@@ -52,7 +52,7 @@ const BaseTable = () => {
   }, []);
   return (
     <>
-      <Table columns={columns} dataSource={dataSource} pagination={{ defaultCurrent: 6, total: 500 }} onChange={onChange} />
+      <Table columns={columns} dataSource={dataSource} pagination={{ defaultCurrent: 1, total: 500 }} onChange={onChange} />
     </>
   )
 }
