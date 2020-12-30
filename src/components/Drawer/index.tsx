@@ -1,6 +1,6 @@
 import React from 'react';
 import { Drawer, Radio, Switch } from 'antd'
-import { sidebartheme, fixheader, sidebar, sidebartype, tagviewsflag } from '../../redux/models';
+import { sidebartheme, fixheader, sidebar, sidebartype, tagviewsflag, logoshow } from '../../redux/models';
 import './index.css'
 
 interface propsType {
@@ -10,11 +10,6 @@ interface propsType {
 
 const SideDrawer = ({ visible, onClose }: propsType) => {
   const sidebarTheme = sidebartheme.useData();
-  const Sidebar = sidebar.useData();
-  const fixHeader = fixheader.useData();
-  const sidebarType = sidebartype.useData();
-  const tagViewsflag = tagviewsflag.useData();
-  
   const DrawerTitle = "系统布局配置";
   const DrawerPlacement = "right";
   const options = [
@@ -26,19 +21,18 @@ const SideDrawer = ({ visible, onClose }: propsType) => {
   };
   const ChangeTheme = (e: { target: { value: string | undefined; }; }) => {
     sidebartheme.setTheme(e.target.value)
-    console.log('radio4 checked', e.target.value);
-
   };
   const changeHeader = (checked: boolean) => {
-    console.log(`switch to ${checked}`);
     fixheader.setFixHeader(checked);
   }
   const changeTabs = (checked: boolean) => {
-    console.log(`switch to ${checked}`);
     tagviewsflag.setTagViewsFlag(checked)
   }
   const changeSidebar = (checked: boolean) => {
     sidebar.setSdierBar(checked);
+  }
+  const changeLogo = (cheek: boolean) => {
+    logoshow.toggleLogo(cheek);
   }
   return (
     <Drawer
@@ -71,6 +65,12 @@ const SideDrawer = ({ visible, onClose }: propsType) => {
         <div className="text">固定Header</div>
         <div className="option">
           <Switch defaultChecked onChange={changeHeader} />
+        </div>
+      </div>
+      <div className="setting-item">
+        <div className="text">侧边栏Logo</div>
+        <div className="option">
+          <Switch defaultChecked onChange={changeLogo} />
         </div>
       </div>
       <div className="setting-item">

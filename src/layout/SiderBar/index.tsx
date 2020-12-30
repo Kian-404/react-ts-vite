@@ -4,6 +4,7 @@ import { Layout, Menu } from 'antd';
 import { SiderItems, ItemProps } from './sideconfig';
 import { collapsed, sidebartheme, sidebartype, tagviews, currentTag } from '../../redux/models'
 import './index.css'
+import Logo from '../Logo'
 const { Sider } = Layout;
 
 const { SubMenu, Item } = Menu
@@ -55,7 +56,7 @@ const MSider: FC = () => {
   const HighlightTag = currentTag.useData();
   return (
     <Sider className="siderbar" trigger={null} theme={sidebarTheme.theme} collapsible collapsed={collapsedflag.collapsed}>
-      <div className={`logo ${sidebarTheme.theme === 'dark' ? '' : 'light'}`}  >Hello </div>
+      <Logo />
       <Menu className='sidebar-menu' selectedKeys={[HighlightTag.currentTag.key]} theme={sidebarTheme.theme} mode={sidebarType.sidertype} defaultSelectedKeys={defaultSelectedKeys}>
         {SideMenu(SiderItems)}
       </Menu>

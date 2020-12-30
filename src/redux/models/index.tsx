@@ -26,6 +26,10 @@ interface SelectTag {
   currentTag: ItemProps
 }
 
+interface LogoData {
+  show: boolean
+}
+
 class Collapsed extends Model<CollapsedData> {
   setCollapesd = this.action((state, collapsed: boolean = true) => {
     state.collapsed = collapsed;
@@ -134,6 +138,18 @@ class SidebarTheme extends Model<ThemeData>{
   }
 }
 
+class LogoShow extends Model<LogoData> {
+  toggleLogo = this.action((state, show: boolean = true) => {
+    state.show = show;
+  });
+
+  protected initialState(): LogoData {
+    return {
+      show: true
+    };
+  }
+}
+
 export const collapsed = new Collapsed();
 export const fixheader = new FixHeader();
 export const sidebar = new SideBar();
@@ -142,3 +158,4 @@ export const tagviews = new TagViews();
 export const currentTag = new CurrentTag();
 export const sidebartype = new SidebarType();
 export const sidebartheme = new SidebarTheme();
+export const logoshow = new LogoShow();
