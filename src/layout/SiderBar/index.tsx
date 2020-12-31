@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Link } from 'react-router-dom'
 import { Layout, Menu } from 'antd';
 import { SiderItems, ItemProps } from './sideconfig';
-import { collapsed, sidebartheme, sidebartype, tagviews, currentTag } from '../../redux/models'
+import { collapsed, sidebartheme, sidebartype, tagviews,tagviewsflag, currentTag } from '../../redux/models'
 import './index.css'
 import Logo from '../Logo'
 const { Sider } = Layout;
@@ -13,6 +13,7 @@ const { SubMenu, Item } = Menu
 const SideMenu = (menus: any) => {
   const tagViews = tagviews.useData();
   const HighlightTag = currentTag.useData();
+  const tagviewsFlag = tagviewsflag.useData();
   const showRoute = (item: ItemProps) => {
     console.log(item)
     console.log(tagViews.routes);
@@ -22,7 +23,7 @@ const SideMenu = (menus: any) => {
         isNotArray = false;
       }
     })
-    if (isNotArray) {
+    if (isNotArray&&tagviewsFlag.tagviewsflag) {
       tagviews.setTagViews(item);
     }
     currentTag.setCurrentTag(item);

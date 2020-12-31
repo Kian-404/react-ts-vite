@@ -1,0 +1,17 @@
+.logo{
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+}
+.logo.light {
+  color: #000000;
+}
+.logo .text{
+  color: inherit;
+}
+.logo .sidebar-logo{
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 12px;
+}
