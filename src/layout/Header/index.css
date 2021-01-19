@@ -13,7 +13,11 @@
   flex-flow: row-reverse;
 }
 .header .header-content .option-item{
-  margin: 0 20px;
+  margin: 0 5px;
+  padding: 0 15px;
+}
+.header .header-content .option-item:hover{
+  background: #eee;
 }
 .header .header-content .option-item .icon-item {
   font-size: 20px;
@@ -36,4 +40,7 @@
 }
 .tag-views .ant-tag .anticon {
   margin: 0 3px;
+}
+.ant-list-item:hover{
+  cursor: pointer;
 }

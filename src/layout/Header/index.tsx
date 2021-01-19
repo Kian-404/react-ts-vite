@@ -15,6 +15,7 @@ import {
   GithubOutlined
 } from '@ant-design/icons';
 import './index.css'
+import { Popover } from 'antd';
 const { Header, } = Layout;
 interface props {
   collapsed: Boolean,
@@ -34,23 +35,13 @@ const menu = (
   </Menu>
 );
 const data = [
-  'Racing car sprays burning fuel into crowd.',
-  'Japanese princess to wed commoner.',
-  'Australian walks 100km after outback crash.',
-  'Man charged over missing wedding girl.',
-  'Los Angeles battles huge wildfires.',
+  '未读消息1',
+  '未读消息2',
+  '未读消息3',
+  '未读消息4',
+  '未读消息5',
 ];
-const Message = (
-  <List
-    bordered
-    dataSource={data}
-    renderItem={(item: any) => (
-      <List.Item>
-        {item}
-      </List.Item>
-    )}
-  />
-)
+
 const MHeader = () => {
   useEffect(() => {
     console.log(window.location.pathname);
@@ -78,6 +69,7 @@ const MHeader = () => {
   // 侧边抽屉显示隐藏
   const [visible, setVisible] = useState(false);
   const [routes, setRoutes] = useState(['/']);
+  const [MessageCount, setMessageCount] = useState(5);
 
   const showDrawer = () => {
     setVisible(true);
@@ -99,6 +91,20 @@ const MHeader = () => {
     currentTag.setCurrentTag(tempItem)
     tagviews.removeTagViews(index);
   }
+  const readMessage = (item: any) => {
+    console.log(item);
+    setMessageCount(MessageCount>0?MessageCount-1:0)
+  }
+  const content = (
+    <List
+      dataSource={data}
+      renderItem={(item: any) => (
+        <List.Item onClick={()=>readMessage(item)}>
+          {item}
+        </List.Item>
+      )}
+    />
+  )
   return (
     <>
       <Header className="site-layout-background header" style={{ padding: 0 }}>
@@ -118,9 +124,11 @@ const MHeader = () => {
             </Dropdown>
           </div>
           <div className="option-item">
-            <Dropdown overlay={Message} placement="bottomCenter" arrow>
-              <Badge className="icon-item" count={5}><BellOutlined /></Badge>
-            </Dropdown>
+            {/* <Dropdown overlay={Message} placement="bottomCenter" arrow> */}
+            <Popover content={content} title="消息列表">
+              <Badge className="icon-item" count={MessageCount}><BellOutlined /></Badge>
+            </Popover>
+            {/* </Dropdown> */}
           </div>
           <div className="option-item">
             <Tooltip placement="bottom" title="布局样式">
